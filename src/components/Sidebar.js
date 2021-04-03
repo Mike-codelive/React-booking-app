@@ -3,61 +3,110 @@ import logo from '../assets/logo.svg'
 import { Link } from 'react-router-dom'
 import { useProductsContext } from '../context/products_context'
 import { FaTimes } from 'react-icons/fa'
+import { RiSunLine, RiMoonLine } from 'react-icons/ri'
 import { links } from '../utils/constants'
 import styled from 'styled-components'
 import CartButtons from './CartButtons'
+import { useThemeToggle } from '../context/theme_toggle'
 import { useUserContext } from '../context/user_context'
 
 const Sidebar = () => {
-  return <h4>sidebar</h4>
+  const { isSidebarOpen, closeSidebar } = useProductsContext();
+  const { changeTheme, isLightThemeActive } = useThemeToggle();
+
+  return (
+    <SidebarContainer className={`${isLightThemeActive ? 'light-theme' : 'dark-theme'}`}>
+      <aside
+        className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
+      >
+        <div className='sidebar-header'>
+          <img src={logo} className='logo' alt='apart booking' />
+          <button className='close-btn' type='button' onClick={closeSidebar}>
+            <FaTimes />
+          </button>
+        </div>
+        <ul className='links'>
+          {links.map(({ id, text, url }) => {
+            return (
+              <li key={id}>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
+              </li>
+            )
+          })}
+          <li>
+            <Link to='/checkout' onClick={closeSidebar}>
+              checkout
+              </Link>
+          </li>
+        </ul>
+        <CartButtons />
+        <button className='theme-btn' onClick={changeTheme}>
+          <RiSunLine className={`${isLightThemeActive ? '' : 'hide-icon'}`} />
+          <RiMoonLine className={`${isLightThemeActive ? 'hide-icon' : ''}`} />
+        </button>
+      </aside>
+    </SidebarContainer>
+  )
 }
 
 const SidebarContainer = styled.div`
+
   text-align: center;
+
+  .logo {
+    justify-self: center;
+    height: 45px;
+  }
+
   .sidebar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
+    background-color: var(--primary-light);
+    .close-btn {
+      font-size: 2rem;
+      background: transparent;
+      border-color: transparent;
+      color: var(--clr-primary-5);
+      transition: var(--transition);
+      cursor: pointer;
+      color: var(--clr-red-dark);
+      margin-top: 0.2rem;
+    }
+    .close-btn:hover {
+      color: var(--clr-red-light);
+    }
+    .close-btn:focus {
+      outline: unset;
+    }
   }
-  .close-btn {
-    font-size: 2rem;
-    background: transparent;
-    border-color: transparent;
-    color: var(--clr-primary-5);
-    transition: var(--transition);
-    cursor: pointer;
-    color: var(--clr-red-dark);
-    margin-top: 0.2rem;
-  }
-  .close-btn:hover {
-    color: var(--clr-red-light);
-  }
-  .logo {
-    justify-self: center;
-    height: 45px;
-  }
+
   .links {
     margin-bottom: 2rem;
+    background-color: var(--primary-light);
+    a {
+      display: block;
+      text-align: left;
+      font-size: 1rem;
+      text-transform: capitalize;
+      padding: 1rem 1.5rem;
+      color: var(--primary-dark);
+      transition: var(--transition);
+      letter-spacing: var(--spacing);
+      transition-property: var(--theme-transition-props);
+    }
+    
+    a:hover {
+      padding: 1rem 1.5rem;
+      padding-left: 2rem;
+      background: var(--clr-grey-10);
+      color: var(--clr-grey-2);
+    }
   }
-  .links a {
-    display: block;
-    text-align: left;
-    font-size: 1rem;
-    text-transform: capitalize;
-    padding: 1rem 1.5rem;
-    color: var(--clr-grey-3);
-    transition: var(--transition);
-    letter-spacing: var(--spacing);
-  }
-
-  .links a:hover {
-    padding: 1rem 1.5rem;
-    padding-left: 2rem;
-    background: var(--clr-grey-10);
-    color: var(--clr-grey-2);
-  }
-
+  
   .sidebar {
     position: fixed;
     top: 0;
@@ -69,13 +118,13 @@ const SidebarContainer = styled.div`
     transform: translate(-100%);
     z-index: -1;
   }
+
   .show-sidebar {
     transform: translate(0);
     z-index: 999;
+    background-color: var(--primary-light);
   }
-  .cart-btn-wrapper {
-    margin: 2rem auto;
-  }
+
   @media screen and (min-width: 992px) {
     .sidebar {
       display: none;

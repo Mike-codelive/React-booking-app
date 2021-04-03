@@ -10,7 +10,10 @@ Variables
 
   --font-primary: 'Roboto', sans-serif;
 
-  --primary-dark: #121212;
+  /* --primary-dark: #121212; */
+  --static-dark: #121212;
+  --theme-transition: 1.4s linear;
+  --theme-transition-props: color, background-color;
   /* dark shades of primary color*/
   --clr-primary-1: hsl(22, 28%, 21%);
   --clr-primary-2: hsl(22, 28%, 29%);
@@ -93,5 +96,5 @@ ul {
 .dark-theme {
   --primary-dark: #ffffff;
   --primary-light: #121212;
-  /* --primary-grey: #f6f7fb; */
+  --primary-grey: #f6f7fb;
 }
