@@ -7,7 +7,6 @@ import {
 
 const initialState = {
   isLightThemeActive: true,
-  isSunIconActive: true,
 }
 
 const ThemeState = React.createContext()

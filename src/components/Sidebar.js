@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/logo.svg'
+// import logo from '../assets/logo.svg'
 import { Link } from 'react-router-dom'
 import { useProductsContext } from '../context/products_context'
 import { FaTimes } from 'react-icons/fa'
@@ -20,7 +20,8 @@ const Sidebar = () => {
         className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
       >
         <div className='sidebar-header'>
-          <img src={logo} className='logo' alt='apart booking' />
+          {/* <img src={logo} className='logo' alt='apart booking' /> */}
+          <h1 className='logo-nav'>Apart.</h1>
           <button className='close-btn' type='button' onClick={closeSidebar}>
             <FaTimes />
           </button>
@@ -55,6 +56,40 @@ const SidebarContainer = styled.div`
 
   text-align: center;
 
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-light);
+    transition: background-color var(--theme-transition), transform 0.3s linear;
+    transform: translateX(-100vw);
+
+    .theme-btn {
+      margin-right: 1rem;
+      margin-top: 50px;
+      border: none;
+      background-color: transparent;
+      font-size: 36px;
+      color: var(--primary-dark);
+      transition: var(--theme-transition);
+      transition-property: var(--theme-transition-props);
+      .hide-icon {
+        display: none;
+      }
+      :focus {
+        outline: none;
+      }
+    }
+  }
+
+  .show-sidebar {
+    transform: translateX(0);
+    transition: background-color var(--theme-transition), transform 0.3s linear;
+    z-index: 999;
+  }
+
   .logo {
     justify-self: center;
     height: 45px;
@@ -66,6 +101,7 @@ const SidebarContainer = styled.div`
     align-items: center;
     padding: 1rem 1.5rem;
     background-color: var(--primary-light);
+    transition: var(--theme-transition);
     .close-btn {
       font-size: 2rem;
       background: transparent;
@@ -82,11 +118,39 @@ const SidebarContainer = styled.div`
     .close-btn:focus {
       outline: unset;
     }
+    .logo-nav {
+      color: var(--primary-dark);
+      transition: var(--theme-transition);
+      transition-property: var(--theme-transition-props);
+      position: relative;
+      font-size: 2rem;
+      :before {
+        content: '';
+        position: absolute;
+        background-color: red;
+        width: 25px;
+        height: 4px;
+        top: 0;
+        right: -7px;
+        transform: rotate(30deg);
+      }
+      :after {
+        content: '';
+        position: absolute;
+        background-color: red;
+        width: 25px;
+        height: 4px;
+        top: 0;
+        right: 12px;
+        transform: rotate(150deg);
+      }
+    }
   }
 
   .links {
     margin-bottom: 2rem;
     background-color: var(--primary-light);
+    transition: var(--theme-transition);
     a {
       display: block;
       text-align: left;
@@ -105,24 +169,6 @@ const SidebarContainer = styled.div`
       background: var(--clr-grey-10);
       color: var(--clr-grey-2);
     }
-  }
-  
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--clr-white);
-    transition: var(--transition);
-    transform: translate(-100%);
-    z-index: -1;
-  }
-
-  .show-sidebar {
-    transform: translate(0);
-    z-index: 999;
-    background-color: var(--primary-light);
   }
 
   @media screen and (min-width: 992px) {

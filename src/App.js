@@ -41,8 +41,8 @@ function App() {
 				</Route>
 			</Switch>
 			<Footer />
-			</Router>
-			)
+		</Router>
+	)
 
 }
 

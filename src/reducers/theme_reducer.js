@@ -6,7 +6,7 @@ const theme_reducer = (state, action) => {
 
   if (state.isLightThemeActive && action.type === CHANGE_THEME) {
     return { ...state, isLightThemeActive: false }
-  } else if (!state.isLightThemeActive && action.type === CHANGE_THEME) {
+  } else {
     return { ...state, isLightThemeActive: true }
   }
 
