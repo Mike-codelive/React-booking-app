@@ -14,7 +14,8 @@ Variables
   --static-dark: #121212;
   --static-white: #ffffff;
   --primary-blue: #2c98f0;
-  --logo-color: #2c98f0;
+  --logo: #2c98f0;
+  --second-logo: #f11616;
   --theme-transition: 1.4s linear;
   --theme-transition-props: color, background-color;
 
@@ -107,4 +108,9 @@ ul {
   --primary-dark: #ffffff;
   --primary-light: #121212;
   --primary-grey: #f6f7fb;
+}
+
+.page-100 {
+  min-height: calc(100vh - 5rem);
+  padding: 5rem 0;
 }

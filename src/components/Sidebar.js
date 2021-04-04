@@ -137,7 +137,7 @@ const SidebarContainer = styled.div`
       :after {
         content: '';
         position: absolute;
-        background-color: red;
+        background-color: var(--second-logo);
         width: 25px;
         height: 4px;
         top: 0;

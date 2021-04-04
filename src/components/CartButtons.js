@@ -36,43 +36,40 @@ const Wrapper = styled.div`
       align-items: center;
       justify-content: center;
     }
-    .cart-value {
-      position: absolute;
-      top: -10px;
-      right: -16px;
-      background-color: var(--primary-grey);
-      width: 16px;
-      height: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      font-size: 0.75rem;
-      color: var(--static-dark);
-      padding: 12px;
-  }
-  
-  .cart-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-right: 2rem;
-    transition: var(--theme-transition);
-    transition-property: var(--theme-transition-props);
-    .cart-btn {
-      border: none;
-      background-color: transparent;
-      font-size: 1.5rem;
-      color: var(--primary-dark);
+    
+    .cart-container {
+      position: relative;
+      margin-right: 2rem;
       transition: var(--theme-transition);
       transition-property: var(--theme-transition-props);
-      position: relative;
-      cursor: pointer;
-      svg {
-        margin-left: 5px;
-        height: 1.6rem;
+      .cart-btn {
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        color: var(--primary-dark);
+        transition: var(--theme-transition);
+        transition-property: var(--theme-transition-props);
+        position: relative;
+        cursor: pointer;
+        svg {
+          margin-left: .6rem;
+        }
       }
-    }
+      .cart-value {
+        position: absolute;
+        top: -15px;
+        right: -16px;
+        background-color: var(--primary-grey);
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 0.75rem;
+        color: var(--static-dark);
+        padding: 12px;
+      }
   }
 
   .auth-btn {
@@ -99,8 +96,8 @@ const Wrapper = styled.div`
   border-radius: 15px;
   color: var(--static-white) !important;
   .cart-value {
-    top: 15px;
-    right: 27px;
+    top: 10px;
+    right: 15px;
   }
 }
 .auth-btn--blue {

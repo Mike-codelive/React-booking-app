@@ -69,7 +69,7 @@ const NavContainer = styled.nav`
       :before {
         content: '';
         position: absolute;
-        background-color: var(--logo-color);
+        background-color: var(--logo);
         width: 25px;
         height: 4px;
         top: 0;
@@ -79,7 +79,7 @@ const NavContainer = styled.nav`
       :after {
         content: '';
         position: absolute;
-        background-color: var(--logo-color);
+        background-color: var(--logo);
         width: 25px;
         height: 4px;
         top: 0;
@@ -115,8 +115,8 @@ const NavContainer = styled.nav`
     display: flex;
     align-items: center;
     .theme-btn {
-      margin-right: 1rem;
-      margin-top: 10px;
+      margin-right: 2rem;
+      /* margin-top: 10px; */
       border: none;
       background-color: transparent;
       cursor: pointer;
@@ -158,12 +158,10 @@ const NavContainer = styled.nav`
 			bottom: -7px;
 			left: 0;
 			background-color: var(--primary-dark);
-			visibility: hidden;
 			transition: transform 0.3s ease-in-out;
       transform: scaleX(0);
 		}
     li:hover:after {
-        visibility: visible;
         transform: scaleX(1);
     }
    }
