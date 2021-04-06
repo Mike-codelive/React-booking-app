@@ -16,8 +16,11 @@ Variables
   --primary-blue: #2c98f0;
   --logo: #2c98f0;
   --second-logo: #f11616;
+  --light-grey-color: #EAEEF3;
+  --grey-color: #5E6D77;
   --theme-transition: 1.4s linear;
   --theme-transition-props: color, background-color;
+  --lateral-gutters: 0 2rem;
 
 
   /* dark shades of primary color*/
@@ -96,6 +99,12 @@ ul {
 .max-w-center {
   max-width: 1366px;
   margin: 0 auto;
+  padding: var(--lateral-gutters);
+}
+
+.img-center {
+  background-size: cover;
+  background-position: center;
 }
 
 .light-theme {
@@ -110,7 +119,28 @@ ul {
   --primary-grey: #f6f7fb;
 }
 
+
 .page-100 {
   min-height: calc(100vh - 5rem);
   padding: 5rem 0;
 }
+.page {
+  min-height: calc(100vh - (20vh + 10rem));
+}
+.section {
+  padding: 5rem 0;
+}
+/* .section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+} */
+.title .underline {
+  width: 6rem;
+  height: 0.25rem;
+  background: #49a6e9;
+  background: var(--clr-primary-5);
+  margin-left: auto;
+  margin-right: auto;
+}
+

@@ -52,9 +52,10 @@ const NavContainer = styled.nav`
   background-color: var(--primary-light);
   transition: var(--theme-transition);
   transition-property: var(--theme-transition-props);
+  position: relative;
 
   .navbar {
-    padding: 0 2rem;
+    padding: var(--lateral-gutters, 0 2rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,6 +67,7 @@ const NavContainer = styled.nav`
       transition-property: var(--theme-transition-props);
       position: relative;
       font-size: 2rem;
+      letter-spacing: 3px;
       :before {
         content: '';
         position: absolute;
@@ -73,7 +75,7 @@ const NavContainer = styled.nav`
         width: 25px;
         height: 4px;
         top: 0;
-        right: -7px;
+        right: -2px;
         transform: rotate(30deg);
       }
       :after {
@@ -83,7 +85,7 @@ const NavContainer = styled.nav`
         width: 25px;
         height: 4px;
         top: 0;
-        right: 12px;
+        right: 17px;
         transform: rotate(150deg);
       }
     }
@@ -115,7 +117,7 @@ const NavContainer = styled.nav`
     display: flex;
     align-items: center;
     .theme-btn {
-      margin-right: 2rem;
+      margin-right: 1.4rem;
       /* margin-top: 10px; */
       border: none;
       background-color: transparent;
@@ -145,7 +147,7 @@ const NavContainer = styled.nav`
     }
     li {
       position: relative;
-      font-weight: 600;
+      font-size: 1rem;
       color: var(--primary-dark);
       transition: var(--theme-transition);
       transition-property: var(--theme-transition-props);

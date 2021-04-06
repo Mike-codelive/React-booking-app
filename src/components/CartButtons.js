@@ -15,13 +15,13 @@ const CartButtons = () => {
     <Wrapper className={`${isLightThemeActive ? 'light-theme' : 'dark-theme'}`}>
       <div className='center-buttons'>
         <Link to='/cart' className='cart-container' onClick={closeSidebar}>
-          <button type='button' className={`${isSidebarOpen ? 'cart-btn cart-btn--blue' : 'cart-btn'}`}>
-            {`${isSidebarOpen ? 'cart' : ''}`}
+          <button type='button' className='cart-btn cart-btn--blue'>
+            {`${isSidebarOpen ? 'Cart' : ''}`}
             <BiShoppingBag />
             <span className='cart-value'>12</span>
           </button>
         </Link>
-        <button type='button' className={`${isSidebarOpen ? 'auth-btn auth-btn--blue' : 'auth-btn'}`}>
+        <button type='button' className='auth-btn cart-btn--blue'>
           Login <FaUserPlus />
         </button>
       </div>
@@ -36,21 +36,23 @@ const Wrapper = styled.div`
       align-items: center;
       justify-content: center;
     }
-    
-    .cart-container {
+  .cart-container {
       position: relative;
-      margin-right: 2rem;
+      margin-right: 1.5rem;
       transition: var(--theme-transition);
       transition-property: var(--theme-transition-props);
       .cart-btn {
         border: none;
         background-color: transparent;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         color: var(--primary-dark);
         transition: var(--theme-transition);
         transition-property: var(--theme-transition-props);
         position: relative;
         cursor: pointer;
+        :focus {
+          outline: none;
+        }
         svg {
           margin-left: .6rem;
         }
@@ -75,40 +77,45 @@ const Wrapper = styled.div`
   .auth-btn {
     background: transparent;
     border-color: transparent;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     cursor: pointer;
     color: var(--primary-dark);
     /* letter-spacing: var(--spacing); */
     transition: var(--theme-transition);
     transition-property: var(--theme-transition-props);
+    :focus {
+          outline: none;
+        }
     svg {
       margin-left: 5px;
     }
   }
 
-.cart-btn--blue {
-  background-color: var(--primary-blue) !important;
-  /* padding: 1rem 1.2rem .6rem .6rem; */
-  transition: unset !important;
-  /* padding: 1.5rem; */
-  width: 9rem;
-  height: 5rem;
-  border-radius: 15px;
-  color: var(--static-white) !important;
-  .cart-value {
-    top: 10px;
-    right: 15px;
+  @media screen and (max-width: 992px) {
+    .cart-btn--blue {
+      background-color: var(--primary-blue) !important;
+      /* padding: 1rem 1.2rem .6rem .6rem; */
+      transition: unset !important;
+      /* padding: 1.5rem; */
+      width: 9rem;
+      height: 5rem;
+      border-radius: 15px;
+      color: var(--static-white) !important;
+      .cart-value {
+        top: 10px;
+        right: 15px;
+      }
+    }
+    .auth-btn--blue {
+      background-color: var(--primary-blue);
+      /* padding: 1rem 1.2rem .6rem .6rem; */
+      transition: unset;
+      /* padding: 5.4rem; */
+      width: 9rem;
+      height: 5rem;
+      border-radius: 15px;
+      color: var(--static-white);
+    }
   }
-}
-.auth-btn--blue {
-  background-color: var(--primary-blue);
-  /* padding: 1rem 1.2rem .6rem .6rem; */
-  transition: unset;
-  /* padding: 5.4rem; */
-  width: 9rem;
-  height: 5rem;
-  border-radius: 15px;
-  color: var(--static-white);
-}
 `
 export default CartButtons

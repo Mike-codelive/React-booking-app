@@ -89,12 +89,6 @@ const SidebarContainer = styled.div`
     transition: background-color var(--theme-transition), transform 0.3s linear;
     z-index: 999;
   }
-
-  .logo {
-    justify-self: center;
-    height: 45px;
-  }
-
   .sidebar-header {
     display: flex;
     justify-content: space-between;
@@ -124,6 +118,7 @@ const SidebarContainer = styled.div`
       transition-property: var(--theme-transition-props);
       position: relative;
       font-size: 2rem;
+      letter-spacing: 3px;
       :before {
         content: '';
         position: absolute;
@@ -131,7 +126,7 @@ const SidebarContainer = styled.div`
         width: 25px;
         height: 4px;
         top: 0;
-        right: -7px;
+        right: -2px;
         transform: rotate(30deg);
       }
       :after {
@@ -141,7 +136,7 @@ const SidebarContainer = styled.div`
         width: 25px;
         height: 4px;
         top: 0;
-        right: 12px;
+        right: 17px;
         transform: rotate(150deg);
       }
     }
