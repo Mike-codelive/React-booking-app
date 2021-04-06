@@ -22,7 +22,7 @@ const CartButtons = () => {
           </button>
         </Link>
         <button type='button' className='auth-btn cart-btn--blue'>
-          Login <FaUserPlus />
+          {`${isSidebarOpen ? 'Login' : ''}`} <FaUserPlus />
         </button>
       </div>
     </Wrapper>

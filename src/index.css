@@ -18,6 +18,8 @@ Variables
   --second-logo: #f11616;
   --light-grey-color: #EAEEF3;
   --grey-color: #5E6D77;
+
+  
   --theme-transition: 1.4s linear;
   --theme-transition-props: color, background-color;
   --lateral-gutters: 0 2rem;

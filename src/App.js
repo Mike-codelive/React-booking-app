@@ -20,7 +20,6 @@ function App() {
 			<Sidebar />
 			<Switch>
 				<Route exact path='/' render={Home} />
-				{/* <Route exact path='/about' render={About} /> */}
 				<Route exact path='/about'>
 					<About />
 				</Route>

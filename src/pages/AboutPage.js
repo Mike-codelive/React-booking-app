@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PageHero } from '../components'
+import { PageHero, AboutCards } from '../components'
 import aboutHero from '../assets/main-hero-min.jpg'
 import teamPic from '../assets/team-1-min.jpg'
 import teamPic1 from '../assets/team-2-min.jpg'
@@ -11,13 +11,13 @@ const AboutPage = () => {
 
   return (
 
-    <Wrapper>
+    <Wrapper className={`${isLightThemeActive ? 'light-theme' : 'dark-theme'}`}>
       <main>
         <section className='about__hero img-center'>
           <h2 className='max-w-center'>About Us</h2>
         </section>
         <PageHero title='about' />
-        <section className={`about__section max-w-center ${isLightThemeActive ? 'light-theme' : 'dark-theme'}`}>
+        <section className='about__section max-w-center'>
           <div className='about__team'>
             <div className='about__team-col'>
               <div className='about__team-col-img img-center'></div>
@@ -47,24 +47,8 @@ const AboutPage = () => {
             </div>
 
           </div>
+          <AboutCards />
 
-
-
-          {/* <img src={aboutImg} alt='nice desk' /> */}
-          <article>
-            <div className='title'>
-              <h2>our story</h2>
-              <div className='underline'></div>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-              quaerat, modi doloremque necessitatibus eum dolor nesciunt delectus,
-              voluptate blanditiis, obcaecati beatae ab aut ipsa consequuntur
-              tempora cumque. Ut quo enim vero odio minus nostrum eveniet,
-              doloribus veritatis dolorem unde ipsum, voluptatibus totam.
-              Explicabo, quas libero! Laborum incidunt minima consequatur ratione?
-            </p>
-          </article>
         </section>
       </main>
     </Wrapper>
@@ -73,6 +57,9 @@ const AboutPage = () => {
 
 const Wrapper = styled.section`
 
+  background-color: var(--primary-light, #ffffff);
+  transition: var(--theme-transition);
+  transition-property: var(--theme-transition-props);
 .about__hero {
   background-image: url(${aboutHero});
   padding: 81px 0;
@@ -85,13 +72,13 @@ const Wrapper = styled.section`
     }
 }
 .about__section {
-    margin-top: 60px;
-    background-color: var(--primary-light, #ffffff);
+    padding-top: 60px;
 }
   .about__team {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    margin-bottom: 2rem;
     @media screen and (min-width: 768px) {
       flex-wrap: unset;
     }
@@ -112,6 +99,8 @@ const Wrapper = styled.section`
         font-size: 16px;
         line-height: 25px;
         color: var(--primary-dark, #121212);
+        transition: var(--theme-transition);
+        transition-property: var(--theme-transition-props);
       }
     }
   }
