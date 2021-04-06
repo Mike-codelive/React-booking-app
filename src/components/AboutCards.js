@@ -1,12 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useThemeToggle } from '../context/theme_toggle';
 
 const AboutCards = () => {
-  const { isLightThemeActive } = useThemeToggle();
 
   return (
-    <Wrapper className={`${isLightThemeActive ? 'light-theme' : 'dark-theme'}`}>
+    <Wrapper >
       <div className='about__cards'>
         <div className='about__cards-single'>
           <div className='about__cards-single-side about__cards-single-side-front'>

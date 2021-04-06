@@ -1,13 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { useThemeToggle } from '../context/theme_toggle';
 
 const PageHero = ({ title }) => {
-  const { isLightThemeActive } = useThemeToggle();
 
   return (
-    <Wrapper className={`${isLightThemeActive ? 'light-theme' : 'dark-theme'}`}>
+    <Wrapper>
       <div className='max-w-center about__center-content'>
         <h3 className='about__link'>
           <Link to='/' >Home</Link>

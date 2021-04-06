@@ -6,13 +6,12 @@ import styled from 'styled-components'
 import { useProductsContext } from '../context/products_context'
 import { useCartContext } from '../context/cart_context'
 import { useUserContext } from '../context/user_context'
-import { useThemeToggle } from '../context/theme_toggle'
 
 const CartButtons = () => {
   const { closeSidebar, isSidebarOpen } = useProductsContext();
-  const { isLightThemeActive } = useThemeToggle();
+
   return (
-    <Wrapper className={`${isLightThemeActive ? 'light-theme' : 'dark-theme'}`}>
+    <Wrapper>
       <div className='center-buttons'>
         <Link to='/cart' className='cart-container' onClick={closeSidebar}>
           <button type='button' className='cart-btn cart-btn--blue'>

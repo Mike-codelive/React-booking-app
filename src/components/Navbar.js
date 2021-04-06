@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-// import logo from '../assets/logo.svg'
 import { FaBars } from 'react-icons/fa'
 import { RiSunLine, RiMoonLine } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
@@ -15,10 +14,9 @@ const Nav = () => {
   const { changeTheme, isLightThemeActive } = useThemeToggle();
 
   return (
-    <NavContainer className={`${isLightThemeActive ? 'light-theme' : 'dark-theme'}`}>
+    <NavContainer>
       <div className="max-w-center navbar">
         <Link to='/'>
-          {/* <img src={logo} alt='Apart' /> */}
           <h1 className='logo-nav'>Apart.</h1>
         </Link>
         <button type='button' className='nav-toggle' onClick={openSidebar}>

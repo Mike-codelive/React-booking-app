@@ -4,14 +4,12 @@ import { PageHero, AboutCards } from '../components'
 import aboutHero from '../assets/main-hero-min.jpg'
 import teamPic from '../assets/team-1-min.jpg'
 import teamPic1 from '../assets/team-2-min.jpg'
-import { useThemeToggle } from '../context/theme_toggle'
 
 const AboutPage = () => {
-  const { isLightThemeActive } = useThemeToggle();
 
   return (
 
-    <Wrapper className={`${isLightThemeActive ? 'light-theme' : 'dark-theme'}`}>
+    <Wrapper>
       <main>
         <section className='about__hero img-center'>
           <h2 className='max-w-center'>About Us</h2>
