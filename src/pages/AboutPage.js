@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PageHero, AboutCards } from '../components'
+import { PageHero, AboutCards, AboutSwiper } from '../components'
 import aboutHero from '../assets/main-hero-min.jpg'
 import teamPic from '../assets/team-1-min.jpg'
 import teamPic1 from '../assets/team-2-min.jpg'
@@ -46,6 +46,7 @@ const AboutPage = () => {
 
           </div>
           <AboutCards />
+          <AboutSwiper />
 
         </section>
       </main>
