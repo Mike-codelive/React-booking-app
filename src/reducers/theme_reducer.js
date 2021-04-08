@@ -10,7 +10,7 @@ const theme_reducer = (state, action) => {
     return { ...state, isLightThemeActive: true }
   }
 
-  throw new Error(`No Matching "${action.type}" - action type`)
+  // throw new Error(`No Matching "${action.type}" - action type`)
 }
 
 export default theme_reducer

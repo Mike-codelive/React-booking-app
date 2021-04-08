@@ -46,9 +46,8 @@ const AboutPage = () => {
 
           </div>
           <AboutCards />
-          <AboutSwiper />
-
         </section>
+        <AboutSwiper />
       </main>
     </Wrapper>
   )

@@ -114,12 +114,14 @@ ul {
   --primary-dark: #121212;
   --primary-light: #ffffff;
   --primary-grey: #f6f7fb;
+  --grey-bullets-color: #A0A9B2;
 }
 
 .dark-theme {
   --primary-dark: #ffffff;
   --primary-light: #121212;
   --primary-grey: #f6f7fb;
+  --grey-bullets-color: #ffffff;
 }
 
 
