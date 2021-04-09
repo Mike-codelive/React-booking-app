@@ -19,6 +19,7 @@ import PageHero from './PageHero'
 import StripeCheckout from './StripeCheckout'
 import AboutCards from './AboutCards'
 import AboutSwiper from './AboutSwiper'
+import AboutSendEmail from './AboutSendEmail'
 
 export {
   FeaturedProducts,
@@ -42,4 +43,5 @@ export {
   StripeCheckout,
   AboutCards,
   AboutSwiper,
+  AboutSendEmail,
 }

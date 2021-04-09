@@ -82,7 +82,7 @@ const Wrapper = styled.section`
   margin-top: 2rem;
   
   .about-swiper {
-    height: calc(500px + 3rem);
+    height: calc(500px + 2.9rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,7 +91,7 @@ const Wrapper = styled.section`
       height: 500px;
       width: 75%;
       background-size: cover;
-
+      background-position: center center;
     }
     &__cta {
       position: absolute;
@@ -119,7 +119,9 @@ const Wrapper = styled.section`
 		width: 16px !important;
 		height: 16px !important;
 		border-radius: 50% !important;
-		margin-right: 12px;
+    :not(:last-child) {
+		margin-right: 20px !important;
+    }
 	}
   .swiper-pagination-bullet-active {
 		background-color: var(--static-light, #ffffff) !important;
