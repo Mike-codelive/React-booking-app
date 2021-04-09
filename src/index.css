@@ -20,12 +20,12 @@ Variables
   --grey-color: #5E6D77;
   --suttle-grey-color: #f5f5f5;
   --grey-bullets-color: #A0A9B2;
+  
+  
+  --theme-transition: 1.4s linear;
+  --lateral-gutters: 0 2rem;
   --small-font: 14px;
 
-
-  --theme-transition: 1.4s linear;
-  --theme-transition-props: color, background-color;
-  --lateral-gutters: 0 2rem;
 
 
   /* dark shades of primary color*/
@@ -129,13 +129,13 @@ ul {
 .theme-background {
   background-color: var(--primary-light, #ffffff);
   transition: var(--theme-transition);
-  transition-property: var(--theme-transition-props);
+  transition-property: background-color, color;
 }
 
-.theme-text-black {
+.theme-text-dark {
   color: var(--primary-dark, #121212);
   transition: var(--theme-transition);
-  transition-property: var(--theme-transition-props);
+  transition-property: color, background-color;
 }
 
 .small-text {

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const PageHero = ({ title }) => {
 
   return (
-    <Wrapper>
+    <Wrapper className='theme-background theme-text-dark'>
       <div className='max-w-center about__center-content'>
         <h3 className='about__link'>
           <Link to='/' >Home</Link>
@@ -17,12 +17,8 @@ const PageHero = ({ title }) => {
 }
 
 const Wrapper = styled.section`
-  background: var(--primary-light);
   width: 100%;
   height: 4rem;
-  color: var(--primary-dark);
-  transition: var(--theme-transition);
-  transition-property: var(--theme-transition-props);
   border-bottom: 1px solid var(--light-grey-color, #EAEEF3);
 
   .about__link {

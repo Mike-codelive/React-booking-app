@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PageHero, AboutCards, AboutSwiper, AboutSendEmail } from '../components'
-import aboutHero from '../assets/main-hero-min.jpg'
-import teamPic from '../assets/team-1-min.jpg'
-import teamPic1 from '../assets/team-2-min.jpg'
+import { aboutHero, teamPic, teamPic1 } from '../assets'
 
 const AboutPage = () => {
 
   return (
 
-    <Wrapper>
+    <Wrapper className='theme-background'>
       <main>
         <section className='about__hero img-center'>
           <h2 className='max-w-center'>About Us</h2>
@@ -22,7 +20,7 @@ const AboutPage = () => {
               <div className='about__team-col-title'>
                 <h3>Our Story</h3>
               </div>
-              <div className='about__team-col-description'>
+              <div className='about__team-col-description theme-text-dark'>
                 <p>Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum rutrum,
                 neque sem pretium metus, quis mollis nisl nunc et massa. Nam dapibus nisl vitae elit fringilla
                 rutrum. Aenean sollicitudin, erat a elementum rutrum, neque sem pretium metus, quis mollis nisl
@@ -35,7 +33,7 @@ const AboutPage = () => {
               <div className='about__team-col-title'>
                 <h3>Our Mission</h3>
               </div>
-              <div className='about__team-col-description'>
+              <div className='about__team-col-description theme-text-dark'>
                 <p>Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum rutrum,
                 neque sem pretium metus, quis mollis nisl nunc et massa. Nam dapibus nisl vitae elit fringilla
                 rutrum. Aenean sollicitudin, erat a elementum rutrum, neque sem pretium metus, quis mollis nisl
@@ -56,9 +54,6 @@ const AboutPage = () => {
 
 const Wrapper = styled.section`
 
-  background-color: var(--primary-light, #ffffff);
-  transition: var(--theme-transition);
-  transition-property: var(--theme-transition-props);
 .about__hero {
   background-image: url(${aboutHero});
   padding: 81px 0;
@@ -97,9 +92,6 @@ const Wrapper = styled.section`
       &-description {
         font-size: 16px;
         line-height: 25px;
-        color: var(--primary-dark, #121212);
-        transition: var(--theme-transition);
-        transition-property: var(--theme-transition-props);
       }
     }
   }

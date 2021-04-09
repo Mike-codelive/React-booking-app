@@ -14,13 +14,13 @@ const CartButtons = () => {
     <Wrapper>
       <div className='center-buttons'>
         <Link to='/cart' className='cart-container' onClick={closeSidebar}>
-          <button type='button' className='cart-btn cart-btn--blue'>
+          <button type='button' className='cart-btn theme-text-dark cart-btn--blue'>
             {`${isSidebarOpen ? 'Cart' : ''}`}
             <BiShoppingBag />
             <span className='cart-value'>12</span>
           </button>
         </Link>
-        <button type='button' className='auth-btn cart-btn--blue'>
+        <button type='button' className='auth-btn theme-text-dark cart-btn--blue'>
           {`${isSidebarOpen ? 'Login' : ''}`} <FaUserPlus />
         </button>
       </div>
@@ -38,15 +38,10 @@ const Wrapper = styled.div`
   .cart-container {
       position: relative;
       margin-right: 1.5rem;
-      transition: var(--theme-transition);
-      transition-property: var(--theme-transition-props);
       .cart-btn {
         border: none;
         background-color: transparent;
         font-size: 1.3rem;
-        color: var(--primary-dark);
-        transition: var(--theme-transition);
-        transition-property: var(--theme-transition-props);
         position: relative;
         cursor: pointer;
         :focus {
@@ -78,10 +73,6 @@ const Wrapper = styled.div`
     border-color: transparent;
     font-size: 1.3rem;
     cursor: pointer;
-    color: var(--primary-dark);
-    /* letter-spacing: var(--spacing); */
-    transition: var(--theme-transition);
-    transition-property: var(--theme-transition-props);
     :focus {
           outline: none;
         }
@@ -93,9 +84,7 @@ const Wrapper = styled.div`
   @media screen and (max-width: 992px) {
     .cart-btn--blue {
       background-color: var(--primary-blue) !important;
-      /* padding: 1rem 1.2rem .6rem .6rem; */
       transition: unset !important;
-      /* padding: 1.5rem; */
       width: 9rem;
       height: 5rem;
       border-radius: 15px;
@@ -107,9 +96,7 @@ const Wrapper = styled.div`
     }
     .auth-btn--blue {
       background-color: var(--primary-blue);
-      /* padding: 1rem 1.2rem .6rem .6rem; */
       transition: unset;
-      /* padding: 5.4rem; */
       width: 9rem;
       height: 5rem;
       border-radius: 15px;

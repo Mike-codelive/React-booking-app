@@ -7,7 +7,7 @@ const AboutCards = () => {
     <Wrapper >
       <div className='about__cards'>
         <div className='about__cards-single'>
-          <div className='about__cards-single-side about__cards-single-side-front'>
+          <div className='about__cards-single-side about__cards-single-side-front theme-text-dark '>
             <h4 className='about__cards-single-side-front-total'>100+</h4>
             <p className='about__cards-single-side-front-target'>partner</p>
           </div>
@@ -18,7 +18,7 @@ const AboutCards = () => {
           </div>
         </div>
         <div className='about__cards-single'>
-          <div className='about__cards-single-side about__cards-single-side-front'>
+          <div className='about__cards-single-side about__cards-single-side-front theme-text-dark '>
             <h4 className='about__cards-single-side-front-total'>2k+</h4>
             <p className='about__cards-single-side-front-target'>properties</p>
           </div>
@@ -29,7 +29,7 @@ const AboutCards = () => {
           </div>
         </div>
         <div className='about__cards-single'>
-          <div className='about__cards-single-side about__cards-single-side-front'>
+          <div className='about__cards-single-side about__cards-single-side-front theme-text-dark '>
             <h4 className='about__cards-single-side-front-total'>300+</h4>
             <p className='about__cards-single-side-front-target'>destination</p>
           </div>
@@ -40,7 +40,7 @@ const AboutCards = () => {
           </div>
         </div>
         <div className='about__cards-single'>
-          <div className='about__cards-single-side about__cards-single-side-front'>
+          <div className='about__cards-single-side about__cards-single-side-front theme-text-dark'>
             <h4 className='about__cards-single-side-front-total'>4k+</h4>
             <p className='about__cards-single-side-front-target'>booking</p>
           </div>
@@ -51,7 +51,7 @@ const AboutCards = () => {
           </div>
         </div>
       </div>
-      <div className='about__cards-leyend'>
+      <div className='about__cards-leyend theme-text-dark'>
         <h4 >"Aenean sollicitudin, erat a elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa. Nam
 dapibus nisl vitae elit fringilla rutrum."</h4>
       </div>
@@ -95,7 +95,6 @@ const Wrapper = styled.section`
           justify-content: center;
           align-items: center;
           flex-direction: column;
-          color: var(--primary-dark, #121212);
           &-total {
             font-size: 2rem;
           }
@@ -119,7 +118,6 @@ const Wrapper = styled.section`
     @media screen and (min-width: 760px) {
       padding: 0 150px;
     }
-    color: var(--primary-dark, #121212);
   }
 `
 

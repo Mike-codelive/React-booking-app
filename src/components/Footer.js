@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <Wrapper className='theme-background'>
-      <div className='footer__items theme-text-black max-w-center'>
+      <div className='footer__items theme-text-dark max-w-center'>
         <div className='footer__items-single'>
           <div className='footer__items-single-title'>
             <h6 className='small-text'>NEED HELP?</h6>
@@ -56,19 +56,19 @@ const Footer = () => {
             <h6 className='small-text'>SETTING</h6>
           </div>
           <div className='footer__items-single-currencies --m-top'>
-            <label class="footer__items-single-currencies-t small-text">Currencies</label>
+            <label className="footer__items-single-currencies-t small-text">Currencies</label>
             <select name="currency">
               <option value="USD" data-target="#" data-select2-id="6">MXN</option>
               <option value="EUR" data-target="#" data-select2-id="7">EUR</option>
               <option value="EUR" data-target="#" data-select2-id="7">USD</option>
               <option value="EUR" data-target="#" data-select2-id="7">AUD</option>
-              <option selected="selected" value="AUD" data-target="#" data-select2-id="3">GBP</option>
+              <option defaultValue="selected" value="AUD" data-target="#" data-select2-id="3">GBP</option>
             </select>
           </div>
         </div>
       </div>
       <div className='footer__sub-line'></div>
-      <div className="footer__sub max-w-center theme-background theme-text-black">
+      <div className="footer__sub max-w-center theme-background theme-text-dark">
         <h6 className="small-text">
           Copyright © {new Date().getFullYear()} Apart by <a href='https://github.com/Mike-codelive'>Mikeresolve</a>
         </h6>
@@ -174,9 +174,6 @@ const Wrapper = styled.footer`
       &-currencies {
         display: flex;
         flex-direction: column;
-        &-select {
-
-        }
         & > label {
           margin-bottom: 10px; 
         }
@@ -188,9 +185,9 @@ const Wrapper = styled.footer`
     align-items: center;
     height: 5rem;
     &-line {
-      height: 2px;
-      background-color: var(--suttle-grey-color, #f5f5f5);
-      width: 100vw;
+      height: 1px;
+      background-color: var(--light-grey-color, #EAEEF3);
+      width: 100%;
     }
     a {
       color: var(--primary-blue, #2c98f0);

@@ -5,6 +5,9 @@ import about_swiper_4 from '../assets/about-swiper-4-min.jpg'
 import about_swiper_5 from '../assets/about-swiper-5-min.jpg'
 import about_swiper_6 from '../assets/about-swiper-6-min.jpg'
 import ico_email from '../assets/ico_email_subscribe.svg'
+import aboutHero from '../assets/main-hero-min.jpg'
+import teamPic from '../assets/team-1-min.jpg'
+import teamPic1 from '../assets/team-2-min.jpg'
 
 export {
   about_swiper_1,
@@ -14,4 +17,7 @@ export {
   about_swiper_5,
   about_swiper_6,
   ico_email,
+  teamPic,
+  teamPic1,
+  aboutHero,
 }

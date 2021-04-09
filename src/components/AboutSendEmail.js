@@ -27,6 +27,7 @@ const AboutSendEmail = () => {
 const Wrapper = styled.section`
 
   background-color: var(--suttle-grey-color, #f5f5f5);
+  
   .about__email {
     height: 185px;
     display: flex;

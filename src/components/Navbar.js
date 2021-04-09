@@ -14,26 +14,26 @@ const Nav = () => {
   const { changeTheme, isLightThemeActive } = useThemeToggle();
 
   return (
-    <NavContainer>
+    <NavContainer className='theme-background'>
       <div className="max-w-center navbar">
         <Link to='/'>
-          <h1 className='logo-nav'>Apart.</h1>
+          <h1 className='logo-nav theme-text-dark'>Apart.</h1>
         </Link>
-        <button type='button' className='nav-toggle' onClick={openSidebar}>
+        <button type='button' className='nav-toggle theme-text-dark' onClick={openSidebar}>
           <FaBars />
         </button>
         <ul className='nav-links'>
           {links.map((link) => {
             const { id, text, url } = link
             return (
-              <li key={id}>
+              <li className='theme-text-dark' key={id}>
                 <Link to={url}>{text}</Link>
               </li>
             )
           })}
         </ul>
         <div className='cart-btn-wrapper'>
-          <button className='theme-btn' onClick={changeTheme}>
+          <button className='theme-btn theme-text-dark' onClick={changeTheme}>
             <RiSunLine className={`${isLightThemeActive ? '' : 'hide-icon'}`} />
             <RiMoonLine className={`${isLightThemeActive ? 'hide-icon' : ''}`} />
           </button>
@@ -47,9 +47,6 @@ const Nav = () => {
 
 const NavContainer = styled.nav`
 
-  background-color: var(--primary-light);
-  transition: var(--theme-transition);
-  transition-property: var(--theme-transition-props);
   position: relative;
 
   .navbar {
@@ -60,9 +57,6 @@ const NavContainer = styled.nav`
     height: 5rem;
     
     .logo-nav {
-      color: var(--primary-dark);
-      transition: var(--theme-transition);
-      transition-property: var(--theme-transition-props);
       position: relative;
       font-size: 2rem;
       letter-spacing: 3px;
@@ -96,7 +90,6 @@ const NavContainer = styled.nav`
   .nav-toggle {
     background: transparent;
     border: transparent;
-    color: var(--primary-dark);
     cursor: pointer;
     :focus {
       outline: none;
@@ -116,14 +109,10 @@ const NavContainer = styled.nav`
     align-items: center;
     .theme-btn {
       margin-right: 1.4rem;
-      /* margin-top: 10px; */
       border: none;
       background-color: transparent;
       cursor: pointer;
       font-size: 26px;
-      color: var(--primary-dark);
-      transition: var(--theme-transition);
-      transition-property: var(--theme-transition-props);
       .hide-icon {
         display: none;
       }
@@ -146,9 +135,6 @@ const NavContainer = styled.nav`
     li {
       position: relative;
       font-size: 1rem;
-      color: var(--primary-dark);
-      transition: var(--theme-transition);
-      transition-property: var(--theme-transition-props);
     }
     li:after {
 	    content: "";

@@ -56,16 +56,14 @@ const AboutSwiper = () => {
         }}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
       >
         <div className='swiper-slides'>
           {swiperSlides}
         </div>
         <div className='about-swiper__cta'>
           <h4>Life at Apart</h4>
-          <Link to='/products' className='about-swiper__btn'>
-            Apart Store
+          <Link to='/products' className='about-swiper__cta-btn'>
+            <span>Apart Store</span>
           </Link>
         </div>
         <div ref={prevRef} className="swiper-button-prev button-about-swr button-about-prev" ><HiOutlineArrowLeft /></div>
@@ -97,6 +95,7 @@ const Wrapper = styled.section`
       position: absolute;
       text-align: center;
       z-index: 9999;
+      margin-top: -2.9rem;
       h4 {
         font-size: 2.5rem;
         margin-bottom: 30px;
@@ -106,12 +105,35 @@ const Wrapper = styled.section`
           font-size: 4rem;
         }
       }
-    }
-    &__btn {
-      padding: 10px 20px;
-      background-color: var(--primary-blue, #2c98f0);
-      color: var(--static-white, #ffffff);
-      border-radius: 3px;
+      &-btn {
+        position: relative;
+        padding: 10px 20px;
+        background-color: var(--primary-blue, #2c98f0);
+        color: var(--static-white, #ffffff);
+        border-radius: 3px;
+        span {
+          position: relative;
+          z-index: 5;
+        }
+        &:hover:before {
+          height: 100%;
+        }
+        &:hover span {
+          color: var(--static-dark, #121212);
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 0;
+          width: 100%;
+          background-color: #fff;
+          border-radius: 3px;
+          transition: height 0.2s;
+          z-index: 0;
+        }
+      }
     }
   }
   .swiper-pagination-bullet {
@@ -129,7 +151,7 @@ const Wrapper = styled.section`
 	}
   .button-about-swr {
     background-color: rgba(26, 43, 72, 0.6);
-    margin-top: -3rem;
+    margin-top: -2.9rem;
     width: 50px;
     height: 50px;
     border-radius: 3px;

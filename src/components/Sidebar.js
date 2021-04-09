@@ -1,5 +1,4 @@
 import React from 'react'
-// import logo from '../assets/logo.svg'
 import { Link } from 'react-router-dom'
 import { useProductsContext } from '../context/products_context'
 import { FaTimes } from 'react-icons/fa'
@@ -15,18 +14,17 @@ const Sidebar = () => {
   const { changeTheme, isLightThemeActive } = useThemeToggle();
 
   return (
-    <SidebarContainer className={`${isLightThemeActive ? 'light-theme' : 'dark-theme'}`}>
+    <SidebarContainer className='theme-background'>
       <aside
         className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
       >
         <div className='sidebar-header'>
-          {/* <img src={logo} className='logo' alt='apart booking' /> */}
-          <h1 className='logo-nav'>Apart.</h1>
+          <h1 className='logo-nav theme-text-dark'>Apart.</h1>
           <button className='close-btn' type='button' onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
-        <ul className='links'>
+        <ul className='links theme-text-dark'>
           {links.map(({ id, text, url }) => {
             return (
               <li key={id}>
@@ -39,11 +37,11 @@ const Sidebar = () => {
           <li>
             <Link to='/checkout' onClick={closeSidebar}>
               checkout
-              </Link>
+            </Link>
           </li>
         </ul>
         <CartButtons />
-        <button className='theme-btn' onClick={changeTheme}>
+        <button className='theme-btn theme-text-dark' onClick={changeTheme}>
           <RiSunLine className={`${isLightThemeActive ? '' : 'hide-icon'}`} />
           <RiMoonLine className={`${isLightThemeActive ? 'hide-icon' : ''}`} />
         </button>
@@ -55,6 +53,9 @@ const Sidebar = () => {
 const SidebarContainer = styled.div`
 
   text-align: center;
+  @media screen and (min-width: 992px) {
+      display: none;
+  }
 
   .sidebar {
     position: fixed;
@@ -65,6 +66,7 @@ const SidebarContainer = styled.div`
     background-color: var(--primary-light);
     transition: background-color var(--theme-transition), transform 0.3s linear;
     transform: translateX(-100vw);
+    z-index: 999;
 
     .theme-btn {
       margin-right: 1rem;
@@ -72,9 +74,6 @@ const SidebarContainer = styled.div`
       border: none;
       background-color: transparent;
       font-size: 36px;
-      color: var(--primary-dark);
-      transition: var(--theme-transition);
-      transition-property: var(--theme-transition-props);
       .hide-icon {
         display: none;
       }
@@ -82,40 +81,7 @@ const SidebarContainer = styled.div`
         outline: none;
       }
     }
-  }
-
-  .show-sidebar {
-    transform: translateX(0);
-    transition: background-color var(--theme-transition), transform 0.3s linear;
-    z-index: 999;
-  }
-  .sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    background-color: var(--primary-light);
-    transition: var(--theme-transition);
-    .close-btn {
-      font-size: 2rem;
-      background: transparent;
-      border-color: transparent;
-      color: var(--clr-primary-5);
-      transition: var(--transition);
-      cursor: pointer;
-      color: var(--clr-red-dark);
-      margin-top: 0.2rem;
-    }
-    .close-btn:hover {
-      color: var(--clr-red-light);
-    }
-    .close-btn:focus {
-      outline: unset;
-    }
     .logo-nav {
-      color: var(--primary-dark);
-      transition: var(--theme-transition);
-      transition-property: var(--theme-transition-props);
       position: relative;
       font-size: 2rem;
       letter-spacing: 3px;
@@ -142,35 +108,48 @@ const SidebarContainer = styled.div`
     }
   }
 
+  .show-sidebar {
+    transform: translateX(0);
+    transition: background-color var(--theme-transition), transform 0.3s linear;
+    z-index: 999;
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    .close-btn {
+      font-size: 2rem;
+      background: transparent;
+      border-color: transparent;
+      cursor: pointer;
+      color: var(--second-logo);
+      margin-top: 0.2rem;
+    }
+    .close-btn:focus {
+      outline: unset;
+    }
+  }
+
   .links {
     margin-bottom: 2rem;
-    background-color: var(--primary-light);
-    transition: var(--theme-transition);
+
     a {
       display: block;
       text-align: left;
       font-size: 1rem;
       text-transform: capitalize;
       padding: 1rem 1.5rem;
-      color: var(--primary-dark);
-      transition: var(--transition);
-      letter-spacing: var(--spacing);
-      transition-property: var(--theme-transition-props);
+      letter-spacing: 0.1rem;
     }
-    
+
     a:hover {
       padding: 1rem 1.5rem;
       padding-left: 2rem;
-      background: var(--clr-grey-10);
-      color: var(--clr-grey-2);
     }
   }
 
-  @media screen and (min-width: 992px) {
-    .sidebar {
-      display: none;
-    }
-  }
 `
 
 export default Sidebar
