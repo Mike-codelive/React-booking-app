@@ -117,6 +117,7 @@ ul {
   --primary-light: #ffffff;
   --primary-grey: #f6f7fb;
   --grey-bullets-color: #A0A9B2;
+  --grey-icons-color: #A0A9B2;
 }
 
 .dark-theme {
@@ -124,6 +125,7 @@ ul {
   --primary-light: #121212;
   --primary-grey: #f6f7fb;
   --grey-bullets-color: #ffffff;
+  --grey-icons-color: #ffffff;
 }
 
 .theme-background {

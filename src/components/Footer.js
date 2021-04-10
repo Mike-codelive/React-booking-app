@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { AiOutlineTwitter, AiOutlineYoutube } from 'react-icons/ai'
+import { FaFacebookF } from 'react-icons/fa'
 
 const Footer = () => {
 
@@ -20,7 +22,11 @@ const Footer = () => {
           </div>
           <div className='footer__items-single-contact'>
             <p>Follow Us</p>
-            <p>icons</p>
+            <div className='footer__items-single-icons'>
+              <a href='#'><AiOutlineTwitter /></a>
+              <a href='#'><AiOutlineYoutube /></a>
+              <a href='#'><FaFacebookF /></a>
+            </div>
           </div>
         </div>
         <div className='footer__items-single item-center-lw'>
@@ -176,6 +182,12 @@ const Wrapper = styled.footer`
         flex-direction: column;
         & > label {
           margin-bottom: 10px; 
+        }
+      }
+      &-icons {
+        color: var(--grey-icons-color, #5E6D77);
+        a:not(:last-child) {
+          margin-right: 1rem;
         }
       }
     }
