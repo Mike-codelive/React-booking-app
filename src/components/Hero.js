@@ -1,71 +1,74 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import heroBcg from '../assets/hero-bcg.jpeg'
-import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import { heroBcg } from '../assets'
+
 
 const Hero = () => {
-  return <h4>hero</h4>
+  return (
+    <Wrapper>
+      <div className='banner'>
+        <h1 className='banner-text'>Looking a Hostel for Your next Trip</h1>
+        <Link to='/products' className='cta-btn'>
+          <span>Apart Store</span>
+        </Link>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
-  min-height: 60vh;
-  display: grid;
-  place-items: center;
-  .img-container {
-    display: none;
-  }
 
-  p {
-    line-height: 2;
-    max-width: 45em;
-    margin-bottom: 2rem;
-    color: var(--clr-grey-5);
-    font-size: 1rem;
+  background-image: url(${heroBcg});
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .banner {
+    text-align: center;
   }
-  @media (min-width: 992px) {
+  .banner-text {
+    color: var(--static-white, #ffffff);
+    font-size: 2rem;
+    padding: 0 15px;
+    margin-bottom: 2rem;
+  }
+  .cta-btn {
+    position: relative;
+    padding: 10px 20px;
+    background-color: var(--primary-blue, #2c98f0);
+    color: var(--static-white, #ffffff);
+    border-radius: 3px;
+        span {
+          position: relative;
+          z-index: 5;
+        }
+        &:hover:before {
+          height: 100%;
+        }
+        &:hover span {
+          color: var(--static-dark, #121212);
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 0;
+          width: 100%;
+          background-color: #fff;
+          border-radius: 3px;
+          transition: height 0.2s;
+          z-index: 0;
+        }    
+  }
+  @media screen and (min-width: 700px) {
     height: calc(100vh - 5rem);
-    grid-template-columns: 1fr 1fr;
-    gap: 8rem;
-    h1 {
-      margin-bottom: 2rem;
-    }
-    p {
-      font-size: 1.25rem;
-    }
-    .hero-btn {
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-    }
-    .img-container {
-      display: block;
-      position: relative;
-    }
-    .main-img {
-      width: 100%;
-      height: 550px;
-      position: relative;
-      border-radius: var(--radius);
-      display: block;
-      object-fit: cover;
-    }
-    .accent-img {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 250px;
-      transform: translateX(-50%);
-      border-radius: var(--radius);
-    }
-    .img-container::before {
-      content: '';
-      position: absolute;
-      width: 10%;
-      height: 80%;
-      background: var(--clr-primary-9);
-      bottom: 0%;
-      left: -8%;
-      border-radius: var(--radius);
+    .banner-text {
+    font-size: 3.5rem;
     }
   }
 `

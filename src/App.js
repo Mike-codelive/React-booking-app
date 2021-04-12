@@ -22,7 +22,9 @@ function App() {
 				<Navbar />
 				<Sidebar />
 				<Switch>
-					<Route exact path='/' render={Home} />
+					<Route exact path='/'>
+						<Home />
+					</Route>
 					<Route exact path='/about'>
 						<About />
 					</Route>

@@ -8,6 +8,7 @@ import ico_email from '../assets/ico_email_subscribe.svg'
 import aboutHero from '../assets/main-hero-min.jpg'
 import teamPic from '../assets/team-1-min.jpg'
 import teamPic1 from '../assets/team-2-min.jpg'
+import heroBcg from '../assets/hero-bcg.jpg'
 
 export {
   about_swiper_1,
@@ -20,4 +21,5 @@ export {
   teamPic,
   teamPic1,
   aboutHero,
+  heroBcg,
 }
