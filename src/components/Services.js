@@ -3,70 +3,77 @@ import styled from 'styled-components'
 import { services } from '../utils/constants'
 
 const Services = () => {
-  return <h4>services </h4>
+  return (
+    <Wrapper className='theme-background'>
+      <div className="services max-w-center">
+        <div className="header theme-text-dark">
+          <h3>Custom Furniture <br /> Built only for you </h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+          quisquam saepe id reiciendis sunt, repudiandae libero amet rem quia
+            quod?</p>
+        </div>
+        <div className='services-items'>
+          {services.map((service) => {
+            const { id, icon, title, text } = service
+            return (
+              <article key={id} className='services-item'>
+                <span className='icon'>{icon} </span>
+                <h5 className='theme-text-dark'>{title}</h5>
+                <p className='small-text theme-text-dark'>{text}</p>
+              </article>
+            )
+          })}
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
-  h3,
-  h4 {
-    color: var(--clr-primary-1);
-  }
-  padding: 5rem 0;
-
-  background: var(--clr-primary-10);
-
-  .header h3 {
-    margin-bottom: 2rem;
-  }
-  p {
-    margin-bottom: 0;
-    line-height: 1.8;
-    color: var(--clr-primary-3);
-  }
-  .services-center {
-    margin-top: 4rem;
-    display: grid;
-    gap: 2.5rem;
-  }
-  .service {
-    background: var(--clr-primary-7);
-    text-align: center;
-    padding: 2.5rem 2rem;
-    border-radius: var(--radius);
-    p {
-      color: var(--clr-primary-2);
-    }
-  }
-  span {
-    width: 4rem;
-    height: 4rem;
-    display: grid;
-    margin: 0 auto;
-    place-items: center;
-    margin-bottom: 1rem;
-    border-radius: 50%;
-    background: var(--clr-primary-10);
-    color: var(--clr-primary-1);
-    svg {
+  padding: 3rem 0;
+  .header {
+    margin-bottom: 3rem;
+    h3 {
       font-size: 2rem;
+      margin-bottom: 2rem;
     }
   }
-  @media (min-width: 992px) {
-    .header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+  .services-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+
+    .services-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      .icon {
+        color: var(--primary-blue, #2c98f0);
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+      h5 {
+        font-size: 16px;
+        margin-bottom: 1rem;
+      }
+      p {
+        text-align: center;
+        width: 10rem;
+      }
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+      flex: 0 0 100%;
+      @media screen and (min-width: 500px) {
+        flex: 0 0 calc(50% - 3rem);
+      }
+      @media screen and (min-width: 750px) {
+        flex: 0 0 calc(33.33333% - 3rem);
+      }
     }
   }
-  @media (min-width: 576px) {
-    .services-center {
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    }
-  }
-  @media (min-width: 1280px) {
-    padding: 0;
-    .section-center {
-      transform: translateY(5rem);
-    }
+  @media screen and (min-width: 1280px) {
   }
 `
 export default Services

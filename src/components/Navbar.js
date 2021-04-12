@@ -103,7 +103,7 @@ const NavContainer = styled.nav`
     display: none;
   }
 
-  @media (min-width: 992px) {
+  @media screen and (min-width: 992px) {
   .cart-btn-wrapper {
     display: flex;
     align-items: center;

@@ -11,7 +11,7 @@ const AboutSendEmail = () => {
         <div className='about__email-description'>
           <img className='about__email-description-svg' src={ico_email}></img>
           <div className='about__email-description-text'>
-            <h3>Get Updates & more</h3>
+            <h3>Get Updates & 15% Off</h3>
             <h5>Thoughtful thoughts to your inbox</h5>
           </div>
         </div>
