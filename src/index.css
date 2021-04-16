@@ -28,6 +28,8 @@ Variables
 
 
 
+
+
   /* dark shades of primary color*/
   --clr-primary-1: hsl(22, 28%, 21%);
   --clr-primary-2: hsl(22, 28%, 29%);
@@ -163,18 +165,5 @@ ul {
 }
 .section {
   padding: 5rem 0;
-}
-/* .section-center {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: var(--max-width);
-} */
-.title .underline {
-  width: 6rem;
-  height: 0.25rem;
-  background: #49a6e9;
-  background: var(--clr-primary-5);
-  margin-left: auto;
-  margin-right: auto;
 }
 

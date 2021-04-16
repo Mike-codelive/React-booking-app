@@ -24,7 +24,7 @@ for (var img in aboutImages) {
 }
 
 for (let i = 1; swiperSlidesNum > i; i++) {
-  swiperSlides.push(<SwiperSlide key={i} className={`swiper-slide slide-img-${i}`}></SwiperSlide>)
+  swiperSlides.push(<SwiperSlide key={i} className={`swiper-slide img-center slide-img-${i}`}></SwiperSlide>)
 }
 
 const AboutSwiper = () => {
@@ -88,8 +88,6 @@ const Wrapper = styled.section`
     .swiper-slide {
       height: 500px;
       width: 75%;
-      background-size: cover;
-      background-position: center center;
     }
     &__cta {
       position: absolute;
@@ -101,7 +99,7 @@ const Wrapper = styled.section`
         margin-bottom: 30px;
         font-weight: bold;
         color: var(--static-white, #ffffff);
-        @media (min-width: 992px) {
+        @media screen and (min-width: 992px) {
           font-size: 4rem;
         }
       }

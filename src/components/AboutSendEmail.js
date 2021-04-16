@@ -35,7 +35,7 @@ const Wrapper = styled.section`
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    @media (min-width: 980px) {
+    @media screen and (min-width: 980px) {
       flex-wrap: unset;
       flex-direction: row;
       align-items: center;

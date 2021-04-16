@@ -4,12 +4,12 @@ import { FeaturedProducts, Hero, Services, AboutSendEmail } from '../components'
 const HomePage = () => {
 
   return (
-    <main>
+    <section>
       <Hero />
       <FeaturedProducts />
       <Services />
       <AboutSendEmail />
-    </main>
+    </section>
   )
 }
 

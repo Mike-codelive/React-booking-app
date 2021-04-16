@@ -76,7 +76,7 @@ const Footer = () => {
       <div className='footer__sub-line'></div>
       <div className="footer__sub max-w-center theme-background theme-text-dark">
         <h6 className="small-text">
-          Copyright © {new Date().getFullYear()} Apart by <a href='https://github.com/Mike-codelive'>Mikeresolve</a>
+          Copyright © {new Date().getFullYear()} Apart by <a href='https://github.com/Mike-codelive'>Mike-codelive</a>
         </h6>
       </div>
     </Wrapper>

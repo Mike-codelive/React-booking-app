@@ -6,7 +6,7 @@ import { heroBcg } from '../assets'
 
 const Hero = () => {
   return (
-    <Wrapper>
+    <Wrapper className='img-center'>
       <div className='banner'>
         <h1 className='banner-text'>Looking a Hostel for Your next Trip</h1>
         <Link to='/products' className='cta-btn'>
@@ -20,8 +20,6 @@ const Hero = () => {
 const Wrapper = styled.section`
 
   background-image: url(${heroBcg});
-  background-size: cover;
-  background-position: center;
   height: 400px;
   display: flex;
   align-items: center;
