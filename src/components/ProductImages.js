@@ -33,18 +33,13 @@ const Wrapper = styled.div`
   flex: 1 0 calc(70% - 3px);
   justify-content: space-between;
   margin-top: 2rem;
-  @media screen and (min-width: 800px) {
-    padding-right: 2rem;
-  }
+
   .main {
     flex: 0 0 80%;
     padding-right: 1rem;
     height: 300px;
     object-fit: cover;
     border-radius: 3px;
-    @media screen and (min-width: 800px) {
-      height: 550px;
-    }
     img {
       height: 100%;
       width: 100%;
@@ -56,10 +51,6 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 300px;
-    @media screen and (min-width: 800px) {
-      padding-left: 2rem;
-      height: 550px;
-    }
     .image {
       border-radius: 3px; 
       height: 18%;
@@ -71,6 +62,17 @@ const Wrapper = styled.div`
     }
     .active {
       border: 2px solid var(--primary-dark, #121212);
+    }
+  }
+  @media screen and (min-width: 800px) {
+    padding-right: 2rem;
+    .main {
+      height: 550px;
+      padding-right: 0;
+    }
+    .gallery {
+      padding-left: 2rem;
+      height: 550px;
     }
   }
 `

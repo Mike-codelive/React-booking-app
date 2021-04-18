@@ -15,12 +15,12 @@ const AboutPage = () => {
         <PageHero title='about' />
         <section className='about__section max-w-center'>
           <div className='about__team'>
-            <div className='about__team-col'>
-              <div className='about__team-col-img img-center'></div>
-              <div className='about__team-col-title'>
+            <div>
+              <div className='about__team-img img-center'></div>
+              <div className='about__team-title'>
                 <h3>Our Story</h3>
               </div>
-              <div className='about__team-col-description theme-text-dark'>
+              <div className='about__team-description theme-text-dark'>
                 <p>Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum rutrum,
                 neque sem pretium metus, quis mollis nisl nunc et massa. Nam dapibus nisl vitae elit fringilla
                 rutrum. Aenean sollicitudin, erat a elementum rutrum, neque sem pretium metus, quis mollis nisl
@@ -28,12 +28,12 @@ const AboutPage = () => {
                 </p>
               </div>
             </div>
-            <div className='about__team-col'>
-              <div className='about__team-col-img about__team-col-img-1 img-center'></div>
-              <div className='about__team-col-title'>
+            <div>
+              <div className='about__team-img about__team-col-img-1 img-center'></div>
+              <div className='about__team-title'>
                 <h3>Our Mission</h3>
               </div>
-              <div className='about__team-col-description theme-text-dark'>
+              <div className='about__team-description theme-text-dark'>
                 <p>Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum rutrum,
                 neque sem pretium metus, quis mollis nisl nunc et massa. Nam dapibus nisl vitae elit fringilla
                 rutrum. Aenean sollicitudin, erat a elementum rutrum, neque sem pretium metus, quis mollis nisl
@@ -60,23 +60,17 @@ const Wrapper = styled.section`
   h2 {
       color: var(--static-white, #ffffff);
       text-align: center;
-      @media screen and (min-width: 992px) {
-        text-align: initial;
-      }
+      font-size: 2rem;
     }
 }
 .about__section {
     padding-top: 60px;
-}
-  .about__team {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 2rem;
-    @media screen and (min-width: 768px) {
-      flex-wrap: unset;
-    }
-    &-col {
+    .about__team {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 2rem;
+
       &-img {
         background-image: url(${teamPic});
         height: 185px;
@@ -94,6 +88,21 @@ const Wrapper = styled.section`
         line-height: 25px;
       }
     }
+}
+@media screen and (min-width: 992px) {  
+.about__hero {
+h2 {
+  text-align: initial;
+}
+}
+}
+@media screen and (min-width: 768px) {
+        .about__section {
+            .about__team {
+        flex-wrap: unset;
+      }
+    }
   }
+
 `
 export default AboutPage

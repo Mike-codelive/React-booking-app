@@ -53,9 +53,6 @@ const Sidebar = () => {
 const SidebarContainer = styled.div`
 
   text-align: center;
-  @media screen and (min-width: 992px) {
-      display: none;
-  }
 
   .sidebar {
     position: fixed;
@@ -149,6 +146,10 @@ const SidebarContainer = styled.div`
       padding-left: 2rem;
     }
   }
+
+@media screen and (min-width: 992px) {
+    display: none;
+}
 
 `
 

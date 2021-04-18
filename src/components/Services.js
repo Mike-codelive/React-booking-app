@@ -73,7 +73,15 @@ const Wrapper = styled.section`
       }
     }
   }
-  @media screen and (min-width: 1280px) {
+@media screen and (min-width: 500px) {
+  .services-item {
+  flex: 0 0 calc(50% - 3rem);
   }
+}
+@media screen and (min-width: 750px) {
+  .services-item {
+  flex: 0 0 calc(33.33333% - 3rem);
+  }
+}
 `
 export default Services

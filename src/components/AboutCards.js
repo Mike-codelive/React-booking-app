@@ -68,12 +68,6 @@ const Wrapper = styled.section`
     &-single {
       flex: 0 0 100%;
       margin-top: 30px;
-      @media screen and (min-width: 760px) {
-        flex: 0 0 calc(50% - 30px);
-      }
-      @media screen and (min-width: 1130px) {
-        flex: 0 0 calc(25% - 30px);
-      }
       height: 176px; 
       min-width: 260px;
       position: relative;
@@ -115,10 +109,25 @@ const Wrapper = styled.section`
     margin-top: 3rem;
     line-height: 40px;
     text-align: center;
-    @media screen and (min-width: 760px) {
-      padding: 0 150px;
+  }
+
+@media screen and (min-width: 760px) {
+  .about__cards {
+    &-single {
+      flex: 0 0 calc(50% - 30px);
     }
   }
+  .about__cards-leyend {
+      padding: 0 150px;
+  }
+}
+@media screen and (min-width: 1130px) {
+  .about__cards {
+    &-single {
+      flex: 0 0 calc(25% - 30px);
+    }
+  }
+}
 `
 
 export default AboutCards

@@ -35,12 +35,6 @@ const Wrapper = styled.section`
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    @media screen and (min-width: 980px) {
-      flex-wrap: unset;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
-    }
     &-description {
       display: flex;
       align-items: center;
@@ -59,19 +53,12 @@ const Wrapper = styled.section`
       &-svg {
         margin-right: 2rem;
         display: none;
-        @media screen and (min-width: 800px) {
-          display: initial;
-        }
       }
     }
     &-form {
       position: relative;
       width: 100%;
       display: flex;
-      @media screen and (min-width: 980px) {
-        width: initial;
-        flex: 0 0 40%;
-      }
       input {
         width: 100%;
         flex: 1 0 auto;
@@ -105,5 +92,26 @@ const Wrapper = styled.section`
       }
     }
   }
+@media screen and (min-width: 800px) {
+  .about__email {
+    &-description {
+      &-svg {
+          display: initial;
+        }
+      }
+    }
+}
+@media screen and (min-width: 980px) {
+  .about__email {
+      flex-wrap: unset;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      &-form {
+        width: initial;
+        flex: 0 0 40%;
+      }
+  }
+}
 `
 export default AboutSendEmail

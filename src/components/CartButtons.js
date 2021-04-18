@@ -14,13 +14,13 @@ const CartButtons = () => {
     <Wrapper>
       <div className='center-buttons'>
         <Link to='/cart' className='cart-container' onClick={closeSidebar}>
-          <button type='button' className='cart-btn theme-text-dark cart-btn--blue'>
+          <button type='button' className='btn btn--blue theme-text-dark'>
             {`${isSidebarOpen ? 'Cart' : ''}`}
             <BiShoppingBag />
             <span className='cart-value'>12</span>
           </button>
         </Link>
-        <button type='button' className='auth-btn theme-text-dark cart-btn--blue'>
+        <button type='button' className='btn btn--blue theme-text-dark'>
           {`${isSidebarOpen ? 'Login' : ''}`} <FaUserPlus />
         </button>
       </div>
@@ -34,11 +34,7 @@ const Wrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-  .cart-container {
-      position: relative;
-      margin-right: 1.5rem;
-      .cart-btn {
+      .btn {
         border: none;
         background-color: transparent;
         font-size: 1.3rem;
@@ -51,6 +47,10 @@ const Wrapper = styled.div`
           margin-left: .6rem;
         }
       }
+    }
+  .cart-container {
+      position: relative;
+      margin-right: 1.5rem;
       .cart-value {
         position: absolute;
         top: -15px;
@@ -68,21 +68,8 @@ const Wrapper = styled.div`
       }
   }
 
-  .auth-btn {
-    background: transparent;
-    border-color: transparent;
-    font-size: 1.3rem;
-    cursor: pointer;
-    :focus {
-          outline: none;
-        }
-    svg {
-      margin-left: 5px;
-    }
-  }
-
   @media screen and (max-width: 992px) {
-    .cart-btn--blue {
+    .btn--blue {
       background-color: var(--primary-blue) !important;
       transition: unset !important;
       width: 9rem;
@@ -94,7 +81,7 @@ const Wrapper = styled.div`
         right: 15px;
       }
     }
-    .auth-btn--blue {
+    .btn--blue {
       background-color: var(--primary-blue);
       transition: unset;
       width: 9rem;

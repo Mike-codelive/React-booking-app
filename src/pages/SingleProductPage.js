@@ -125,24 +125,16 @@ const Wrapper = styled.section`
 
 .main-container {
   display: flex;
-  /* justify-content: center; */
-  margin-top: 4rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
   .center-line {
     width: 5px;
     height: inherit;
     background-color: var(--grey-line-color, #f0f0ee);
-    @media screen and (max-width: 800px) {
-      display: none;
-    }
   }
-  @media screen and (min-width: 800px) {
-    flex-wrap: nowrap;
-  }
+
   .data {
-    @media screen and (min-width: 800px) {
-      padding-left: 2rem;
-    }
+
     .links-info {
       margin: 4rem 0;
       > div {
@@ -187,6 +179,22 @@ const Wrapper = styled.section`
     }
   }
 }
+@media screen and (min-width: 800px) {
+  .main-container {
+    flex-wrap: nowrap;
+    .data {
+      padding-left: 2rem;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .main-container {
+    .center-line {
+      display: none;
+    }
+  }
+}
+
 `
 
 export default SingleProductPage

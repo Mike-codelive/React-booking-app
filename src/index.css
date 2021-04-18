@@ -122,6 +122,8 @@ ul {
   --primary-grey: #f6f7fb;
   --grey-bullets-color: #A0A9B2;
   --grey-icons-color: #A0A9B2;
+  transition: var(--theme-transition);
+  transition-property: background-color;
 }
 
 .dark-theme {
@@ -130,6 +132,8 @@ ul {
   --primary-grey: #f6f7fb;
   --grey-bullets-color: #ffffff;
   --grey-icons-color: #ffffff;
+  transition: var(--theme-transition);
+  transition-property: background-color;
 }
 
 .theme-background {

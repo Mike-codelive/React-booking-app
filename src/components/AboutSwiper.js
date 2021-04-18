@@ -99,9 +99,6 @@ const Wrapper = styled.section`
         margin-bottom: 30px;
         font-weight: bold;
         color: var(--static-white, #ffffff);
-        @media screen and (min-width: 992px) {
-          font-size: 4rem;
-        }
       }
       &-btn {
         position: relative;
@@ -164,6 +161,16 @@ const Wrapper = styled.section`
   .swiper-button-next:after {
     content: '' !important;
   }
+
+@media screen and (min-width: 992px) {
+          .about-swiper {
+            &__cta {
+              h4 {
+                  font-size: 4rem;
+                }
+              }
+            }
+        }
 
 `
 export default AboutSwiper
