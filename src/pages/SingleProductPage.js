@@ -129,9 +129,9 @@ const Wrapper = styled.section`
   margin-top: 4rem;
   flex-wrap: wrap;
   .center-line {
-    width: 3px;
+    width: 5px;
     height: inherit;
-    background-color: var(--primary-blue, #2c98f0);
+    background-color: var(--grey-line-color, #f0f0ee);
     @media screen and (max-width: 800px) {
       display: none;
     }
