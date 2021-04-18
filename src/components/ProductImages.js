@@ -37,13 +37,14 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* padding: 0 1rem; */
     img {
       border-radius: 3px; 
       width: 50px;
       height: 50px;
       object-fit: cover;
-      /* margin: 2rem; */
+    }
+    .active {
+      border: 2px solid var(--primary-dark, #121212);
     }
   }
 `

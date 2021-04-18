@@ -2,15 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const PageHero = ({ title }) => {
+const PageHero = ({ title, product }) => {
 
   return (
     <Wrapper className='theme-background theme-text-dark'>
       <div className='max-w-center about__center-content'>
-        <h3 className='about__link'>
-          <Link to='/' >Home</Link>
+        <h3>
+          <Link to='/'>Home</Link>
+          {product && <Link to='/products'> / Products</Link>} / {title}
         </h3>
-        <h3>{title}</h3>
       </div>
     </Wrapper>
   )
@@ -39,10 +39,10 @@ const Wrapper = styled.section`
     position: relative;
     font-size: 13px;
     display: inline-block;
-    :last-child {
-      padding-left: 20px;
-      font-weight: normal;
-      /* color: var(--grey-color, #5E6D77); */
+    font-weight: normal;
+    a {
+      /* padding-left: 20px; */
+      font-weight: bold;
     }
   }
   .about__center-content {

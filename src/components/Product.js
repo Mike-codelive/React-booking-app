@@ -55,7 +55,7 @@ const Wrapper = styled.article`
     grid-row-gap: 0.5rem;
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
-    border: 1px solid var(--static-dark, #121212);
+    border: 1px solid rgba(120, 120, 120, 0.5);/* var(--static-dark, #121212) */;
     border-top: none;
     h5 {
       grid-column: 1 / -1;
