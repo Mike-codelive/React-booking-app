@@ -60,7 +60,7 @@ const SingleProductPage = () => {
   return (
     <Wrapper className='theme-background'>
       <PageHero title={name} product />
-      <div className='max-w-center main-container'>
+      <div className='max-w-center main-container theme-text-dark'>
         <ProductImages images={images} />
         <div className='data'>
           <div className='title'>
@@ -72,6 +72,18 @@ const SingleProductPage = () => {
           <p className='description'>{description}</p>
           <p className='price'>{formatPrice(price)}</p>
           <Stars stars={stars} reviews={reviews} />
+          <p className='info'>
+            <span>Available : </span>
+            {stock > 0 ? 'In stock' : 'out of stock'}
+          </p>
+          <p className='info'>
+            <span>SKU : </span>
+            {sku}
+          </p>
+          <p className='info'>
+            <span>Brand : </span>
+            {company}
+          </p>
           {stock > 0 && <AddToCart product={product} />}
         </div>
       </div>
@@ -100,6 +112,9 @@ const Wrapper = styled.section`
         border-radius: 50%;
         width: 35px;
         height: 35px;
+        svg {
+          color: var(--static-dark, #121212)
+        }
       }
     }
     .description {

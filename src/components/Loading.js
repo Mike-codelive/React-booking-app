@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Loading = () => {
   return (
-    <Wrapper className='section section-center'>
+    <Wrapper className='section section-center theme-background'>
       <div className='loading'></div>
     </Wrapper>
   )
@@ -23,8 +23,8 @@ const Wrapper = styled.section`
   width: 6rem;
   height: 6rem;
   margin: 0 auto;
-  margin-top: 10rem;
-  border: 4px solid #ccc;
+  margin-top: 5rem;
+  border: 4px solid var(--grey-color, #5E6D77);
   animation: spinner 0.6s linear infinite;
 }
 

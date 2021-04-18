@@ -29,6 +29,8 @@ const Stars = ({ stars, reviews }) => {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 2rem;
+  
   span {
     color: #ffb900;
     font-size: 1rem;
@@ -39,6 +41,5 @@ const Wrapper = styled.div`
     margin-bottom: 0;
     border-bottom: 1px solid var(--primary-dark, #121212);
   }
-  margin-bottom: 0.5rem;
 `
 export default Stars

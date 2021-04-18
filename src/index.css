@@ -133,13 +133,25 @@ ul {
 .theme-background {
   background-color: var(--primary-light, #ffffff);
   transition: var(--theme-transition);
-  transition-property: background-color, color;
+  transition-property: background-color;
+}
+
+.theme-background-dark {
+  background-color: var(--primary-dark, #ffffff);
+  transition: var(--theme-transition);
+  transition-property: background-color;
 }
 
 .theme-text-dark {
   color: var(--primary-dark, #121212);
+  transition-property: color;
   transition: var(--theme-transition);
-  transition-property: color, background-color;
+}
+
+.theme-text-light {
+  color: var(--primary-light, #121212);
+  transition-property: color;
+  transition: var(--theme-transition);
 }
 
 .small-text {
