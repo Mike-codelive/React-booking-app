@@ -4,6 +4,7 @@ import { useProductsContext } from '../context/products_context'
 import { single_product_url as url } from '../utils/constants'
 import { formatPrice } from '../utils/helpers'
 import { AiOutlineHeart } from 'react-icons/ai'
+import { IoIosArrowForward } from 'react-icons/io'
 import {
   Loading,
   Error,
@@ -62,6 +63,7 @@ const SingleProductPage = () => {
       <PageHero title={name} product />
       <div className='max-w-center main-container theme-text-dark'>
         <ProductImages images={images} />
+        <div className='center-line'></div>
         <div className='data'>
           <div className='title'>
             <h2>{name}</h2>
@@ -85,6 +87,34 @@ const SingleProductPage = () => {
             {company}
           </p>
           {stock > 0 && <AddToCart product={product} />}
+          <div className='links-info'>
+            <div>
+              <div className='main-info'>
+                <p>Dispatched in 5 - 7 weeks</p>
+                <IoIosArrowForward />
+              </div>
+              <a href='#' className='link'>Why the longer lead time?</a>
+            </div>
+            <div>
+              <div className='main-info'>
+                <p>Home delivery - $ 10</p>
+                <IoIosArrowForward />
+              </div>
+            </div>
+            <div>
+              <div className='main-info'>
+                <p>Hassle-free returns</p>
+                <IoIosArrowForward />
+              </div>
+            </div>
+            <div>
+              <div className='main-info'>
+                <p>Dimentions & details</p>
+                <IoIosArrowForward />
+              </div>
+              <p>W: 140 x H: 163 x D: 56cm</p>
+            </div>
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -94,8 +124,46 @@ const SingleProductPage = () => {
 const Wrapper = styled.section`
 
 .main-container {
-  margin-top: 2rem;
+  display: flex;
+  /* justify-content: center; */
+  margin-top: 4rem;
+  flex-wrap: wrap;
+  .center-line {
+    width: 3px;
+    height: inherit;
+    background-color: var(--primary-blue, #2c98f0);
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    flex-wrap: nowrap;
+  }
   .data {
+    @media screen and (min-width: 800px) {
+      padding-left: 2rem;
+    }
+    .links-info {
+      margin: 4rem 0;
+      > div {
+        border-bottom: 1px solid var(--light-grey-color, #5E6D77);
+        padding: 2rem 0;
+      }
+      .link {
+        text-decoration: underline;
+      }
+      .main-info {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .description {
+      margin-bottom: 2rem;
+    }
+    .price {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
     .title {
       display: flex;
       justify-content: space-between;
@@ -116,13 +184,6 @@ const Wrapper = styled.section`
           color: var(--static-dark, #121212)
         }
       }
-    }
-    .description {
-      margin-bottom: 2rem;
-    }
-    .price {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
     }
   }
 }

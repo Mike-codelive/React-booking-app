@@ -22,8 +22,7 @@ const Wrapper = styled.section`
 .loading {
   width: 6rem;
   height: 6rem;
-  margin: 0 auto;
-  margin-top: 5rem;
+  margin: 5rem auto;
   border: 4px solid var(--grey-color, #5E6D77);
   animation: spinner 0.6s linear infinite;
 }
