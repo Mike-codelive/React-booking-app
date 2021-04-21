@@ -33,7 +33,6 @@ const Wrapper = styled.article`
 .font-opacity {
   opacity: .6 ;
 }
-
   .container-img {
     overflow: hidden;
     border-top-left-radius: 0.25rem;

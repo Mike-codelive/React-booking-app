@@ -164,6 +164,39 @@ ul {
   font-size: var(--small-font, 14px);
 }
 
+.cta-btn {
+  position: relative;
+  padding: 10px 20px;
+  background-color: var(--primary-blue, #2c98f0);
+  color: var(--static-white, #ffffff);
+  border-radius: 3px;
+  border: -2px solid var(--primary-blue, #2c98f0);
+}
+.cta-btn span {
+  position: relative;
+  z-index: 5;
+}
+.cta-btn:hover:before {
+  height: calc(100% + 2px);
+}
+.cta-btn:hover span {
+  color: var(--static-dark, #121212);
+}
+.cta-btn:before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  height: 0;
+  width: calc(100% + 1px);
+  background-color: #fff;
+  border-radius: 3px;
+  transition: height 0.2s;
+  z-index: 0;
+}
+
+
+
 
 
 
