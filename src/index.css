@@ -155,7 +155,7 @@ ul {
 }
 
 .theme-text-light {
-  color: var(--primary-light, #121212);
+  color: var(--primary-light, #ffffff);
   transition-property: color;
   transition: var(--theme-transition);
 }

@@ -7,9 +7,10 @@ import { useLocation } from 'react-router-dom'
 import { BsStarFill } from 'react-icons/bs'
 
 const Product = ({ image, name, price, id, company, featured }) => {
-  const location = useLocation();
+  const location = useLocation()
 
   return (
+
     <Wrapper>
       <div className='container-img'>
         <Link to={`/products/${id}`} className='link'>
