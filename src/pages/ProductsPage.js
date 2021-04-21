@@ -6,8 +6,8 @@ const ProductsPage = () => {
   return (
     <main>
       <PageHero title='products' />
-      <Wrapper className='page'>
-        <div className='section-center products'>
+      <Wrapper className='theme-background'>
+        <div className='max-w-center'>
           <Filters />
           <div>
             <Sort />
@@ -20,7 +20,8 @@ const ProductsPage = () => {
 }
 
 const Wrapper = styled.div`
-  .products {
+
+  /* .products {
     display: grid;
     gap: 3rem 1.5rem;
     margin: 4rem auto;
@@ -29,7 +30,7 @@ const Wrapper = styled.div`
     .products {
       grid-template-columns: 200px 1fr;
     }
-  }
+  } */
 `
 
 export default ProductsPage
