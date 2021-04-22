@@ -8,7 +8,6 @@ const GridView = ({ products }) => {
     <Wrapper>
       <div className='products-container'>
         {products.map((product) => {
-
           return <Product key={product.id} {...product} />
         })}
       </div>
@@ -19,16 +18,25 @@ const GridView = ({ products }) => {
 const Wrapper = styled.section`
 
 .products-container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 1rem; */
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem; 
+  flex-wrap: wrap;
+  padding-left: 1rem;
   article {
+    flex: 0 0 calc(100%);
     .container-img {
       height: 200px;
       border-radius: 20px; 
     }
     .container-data {
       border: none;
+      .price {
+        justify-self: left;
+      }
       .name-mark {
         grid-column: 1 / 1;
         display: block;
@@ -57,6 +65,27 @@ const Wrapper = styled.section`
       }
   }
 }
+}
+@media screen and (min-width: 550px ) {
+  .products-container {
+    article {
+      flex: 0 0 calc(50% - 1rem);
+    }
+  }
+}
+@media screen and (min-width: 1000px ) {
+  .products-container {
+    article {
+      flex: 0 0 calc(33.3333% - 1rem);
+    }
+  }
+}
+@media screen and (min-width: 1350px ) {
+  .products-container {
+    article {
+      flex: 0 0 calc(25% - 1rem);
+    }
+  }
 }
 `
 
