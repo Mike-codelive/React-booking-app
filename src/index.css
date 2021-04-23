@@ -10,7 +10,7 @@ Variables
 
   --font-primary: 'Roboto', sans-serif;
 
-  /* --primary-dark: #121212; */
+  --primary-dark: #121212;
   --static-dark: #121212;
   --static-white: #ffffff;
   --primary-blue: #2c98f0;
@@ -189,7 +189,7 @@ ul {
   bottom: -1px;
   left: -1px;
   height: 0;
-  width: calc(100% + 1px);
+  width: calc(100% + 2px);
   background-color: #fff;
   border-radius: 3px;
   transition: height 0.2s;

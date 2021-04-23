@@ -7,7 +7,7 @@ const ProductsPage = () => {
     <main>
       <PageHero title='products' />
       <Wrapper className='theme-background'>
-        <div className='max-w-center'>
+        <div className='max-w-center content'>
           <Filters />
           <div>
             <Sort />
@@ -21,6 +21,9 @@ const ProductsPage = () => {
 
 const Wrapper = styled.div`
 
+.content {
+  padding-top: 2rem;
+}
   /* .products {
     display: grid;
     gap: 3rem 1.5rem;

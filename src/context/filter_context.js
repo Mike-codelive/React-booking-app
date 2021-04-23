@@ -19,6 +19,7 @@ const initialState = {
   sort: 'price-lowest',
   filters: {
     text: '',
+    featured: false,
     company: 'all',
     category: 'all',
     color: 'all',
@@ -59,7 +60,7 @@ export const FilterProvider = ({ children }) => {
     if (name === 'price') {
       value = Number(value)
     }
-    if (name === 'shipping') {
+    if (name === 'shipping' || name === 'featured') {
       value = e.target.checked
     }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } })

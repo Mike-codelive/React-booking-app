@@ -63,6 +63,7 @@ const filter_reducer = (state, action) => {
         color: 'all',
         price: state.filters.max_price,
         shipping: false,
+        featured: false,
       },
     }
   }
@@ -72,7 +73,7 @@ const filter_reducer = (state, action) => {
   }
   if (action.type === FILTER_PRODUCTS) {
     const { all_products } = state
-    const { text, category, company, color, price, shipping } = state.filters
+    const { text, category, company, color, price, shipping, featured } = state.filters
 
     let tempProducts = [...all_products]
     // filtering
@@ -106,6 +107,9 @@ const filter_reducer = (state, action) => {
     // shipping
     if (shipping) {
       tempProducts = tempProducts.filter((product) => product.shipping === true)
+    }
+    if (featured) {
+      tempProducts = tempProducts.filter((product) => product.featured === true)
     }
 
     return { ...state, filtered_products: tempProducts }
