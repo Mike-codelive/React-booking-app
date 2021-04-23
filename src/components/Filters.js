@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { useFilterContext } from '../context/filter_context'
 import { getUniqueValues, formatPrice } from '../utils/helpers'
 import { FaCheck } from 'react-icons/fa'
+import { BsSearch } from 'react-icons/bs'
+import { GiFactory } from 'react-icons/gi'
+import { AiFillTags } from 'react-icons/ai'
 
 const Filters = () => {
   const {
@@ -31,54 +34,60 @@ const Filters = () => {
         <form onSubmit={(e) => e.preventDefault()}>
           {/* search input */}
           <div className='form-control'>
-            <input
-              type='text'
-              name='text'
-              placeholder='search'
-              className='search-input'
-              value={text}
-              onChange={updateFilters}
-            />
+            <view className='input'>
+              <input
+                type='text'
+                name='text'
+                placeholder='search'
+                className='search-input'
+                value={text}
+                onChange={updateFilters}
+              />
+              <BsSearch />
+            </view>
           </div>
           {/* end search input */}
           {/* categories */}
           <div className='form-control'>
             <h5>category</h5>
-            <div>
-              {categories.map((c, index) => {
-                return (
-                  <button
-                    key={index}
-                    onClick={updateFilters}
-                    type='button'
-                    name='category'
-                    className={`${category === c.toLowerCase() ? 'active' : null
-                      }`}
-                  >
-                    {c}
-                  </button>
-                )
-              })}
+            <div className='select'>
+              <AiFillTags />
+              <select
+                name='category'
+                value={category}
+                onChange={updateFilters}
+              >
+                {categories.map((c, index) => {
+                  return (
+                    <option key={index} value={c}>
+                      {c}
+                    </option>
+                  )
+                })}
+              </select>
             </div>
           </div>
           {/* end of categories */}
           {/* companies */}
           <div className='form-control'>
             <h5>company</h5>
-            <select
-              name='company'
-              value={company}
-              onChange={updateFilters}
-              className='company'
-            >
-              {companies.map((c, index) => {
-                return (
-                  <option key={index} value={c}>
-                    {c}
-                  </option>
-                )
-              })}
-            </select>
+            <div className='select'>
+              <GiFactory />
+              <select
+                name='company'
+                value={company}
+                onChange={updateFilters}
+                className='company'
+              >
+                {companies.map((c, index) => {
+                  return (
+                    <option key={index} value={c}>
+                      {c}
+                    </option>
+                  )
+                })}
+              </select>
+            </div>
           </div>
           {/* end of companies */}
           {/* 
@@ -95,7 +104,7 @@ const Filters = () => {
                       name='color'
                       onClick={updateFilters}
                       data-color='all'
-                      className={`${color === 'all' ? 'all-btn active' : 'all-btn'
+                      className={`${color === 'all' ? 'all-btn active-all' : 'all-btn'
                         }`}
                     >
                       all
@@ -123,16 +132,18 @@ end of           colors
           */}
           {/* price */}
           <div className='form-control'>
-            <h5>price</h5>
-            <p className='price'>{formatPrice(price)}</p>
-            <input
-              type='range'
-              name='price'
-              min={min_price}
-              max={max_price}
-              onChange={updateFilters}
-              value={price}
-            />
+            <div className='range'>
+              <h5>price</h5>
+              <p className='price'>{formatPrice(price)}</p>
+              <input
+                type='range'
+                name='price'
+                min={min_price}
+                max={max_price}
+                onChange={updateFilters}
+                value={price}
+              />
+            </div>
           </div>
           {/* end of price */}
           {/* shippping */}
@@ -158,11 +169,102 @@ end of           colors
 }
 
 const Wrapper = styled.section`
+
+.form-control {
+  h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+  .select {
+    display: flex;
+    align-items: center;
+    width: min-content;
+    border-radius: 10px;
+    background-color: var(--grey-filters-color, #f6f7fb);
+    
+    select {
+      padding: .8rem 20px .8rem 0;
+      background-color: var(--grey-filters-color, #f6f7fb);
+      border-radius: 10px;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: capitalize;
+      :focus {
+        outline: none;
+      }
+    }
+    svg {
+      opacity: 0.5;
+      margin: 0 1rem;
+      font-size: 2rem;
+    }
+  }
+  .input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    input {
+      background-color: var(--grey-filters-color, #f6f7fb);
+      border-radius: 10px;
+      padding: .7rem 20px .7rem 2.2rem;
+      font-size: 1.2rem;
+      :focus {
+        outline: none;
+      }
+    }
+    svg {
+      position: absolute;
+      left: 12px;
+      opacity: 0.5;
+    }
+  }
+  .colors {
+    border-radius: 10px;
+    background-color: var(--grey-filters-color, #f6f7fb);
+    display: inline-block;
+    display: flex;
+    width: min-content;
+    padding: 9.5px 1rem;
+
+    .active {
+      border: 2px solid var(--primary-blue, #2c98f0);
+      opacity: 1;
+    }
+    .active-all {
+      border-color: var(--clr-grey-5);
+      opacity: 1;
+    }
+    button {
+      width: 1.2rem;
+      height: 1.2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-bottom: 1px solid transparent;
+      color: black;
+      :first-child {
+        margin-right: 1rem;
+      }
+      :last-child {
+        margin-right: 0;
+      }
+      :focus {
+        outline: none;
+      }
+    }
+  }
+  .range {
+    border-radius: 10px;
+    background-color: var(--grey-filters-color, #f6f7fb);
+  }
+}
   .form-control {
     margin-bottom: 1.25rem;
-    h5 {
+    /* h5 {
       margin-bottom: 0.5rem;
-    }
+    } */
   }
   .search-input {
     padding: 0.5rem;
@@ -182,9 +284,9 @@ const Wrapper = styled.section`
     text-transform: capitalize;
     background: transparent;
     border: none;
-    border-bottom: 1px solid transparent;
+    /* border-bottom: 1px solid transparent; */
     letter-spacing: var(--spacing);
-    color: var(--clr-grey-5);
+    /* color: var(--clr-grey-5); */
     cursor: pointer;
   }
   .active {
