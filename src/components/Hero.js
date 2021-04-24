@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <Wrapper className='img-center'>
       <div className='banner'>
-        <h1 className='banner-text'>Looking a Hostel for Your next Trip</h1>
+        <h1 className='banner-text'>Looking for Your next Furnishing</h1>
         <Link to='/products' className='cta-btn'>
           <span>Apart Store</span>
         </Link>

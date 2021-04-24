@@ -13,7 +13,9 @@ ReactDOM.render(
   <ProductsProvider>
     <FilterProvider>
       <ThemeToggler>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </ThemeToggler>
     </FilterProvider>
   </ProductsProvider>
