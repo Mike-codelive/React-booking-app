@@ -1,12 +1,20 @@
 import React, { useContext, useReducer } from 'react'
 import reducer from '../reducers/theme_reducer'
-
 import {
   CHANGE_THEME,
 } from '../actions'
 
+const getThemeStorage = () => {
+  let currentThemeState = JSON.parse(localStorage.getItem('theme'));
+
+  if (currentThemeState === null) {
+    return currentThemeState = true;
+  }
+  return currentThemeState;
+}
+
 const initialState = {
-  isLightThemeActive: true,
+  isLightThemeActive: getThemeStorage(),
 }
 
 const ThemeState = React.createContext()

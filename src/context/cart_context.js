@@ -8,7 +8,14 @@ import {
   COUNT_CART_TOTALS,
 } from '../actions'
 
-
+const getLocalStorage = () => {
+  let cart = localStorage.getItem('cart')
+  if (cart) {
+    return JSON.parse(localStorage.getItem('cart'))
+  } else {
+    return []
+  }
+}
 
 const initialState = {
   cart: [],
@@ -40,10 +47,10 @@ export const CartProvider = ({ children }) => {
   //   dispatch({ type: CLEAR_CART })
   // }
 
-  // useEffect(() => {
-  //   dispatch({ type: COUNT_CART_TOTALS })
-  //   localStorage.setItem('cart', JSON.stringify(state.cart))
-  // }, [state.cart])
+  useEffect(() => {
+    // dispatch({ type: COUNT_CART_TOTALS })
+    localStorage.setItem('cart', JSON.stringify(state.cart))
+  }, [state.cart])
 
   return (
     <CartContext.Provider

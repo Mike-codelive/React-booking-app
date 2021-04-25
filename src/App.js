@@ -31,9 +31,13 @@ function App() {
 					<Route exact path='/cart'>
 						<Cart />
 					</Route>
-					<Route exact path='/products' render={Products} />
+					<Route exact path='/products'>
+						<Products />
+					</Route>
 					<Route exact path='/products/:id' children={<SingleProduct />} />
-					<PrivateRoute exact path='/checkout' render={Checkout} />
+					<PrivateRoute exact path='/checkout'>
+						<Checkout />
+					</PrivateRoute >
 					<Route path='*'>
 						<Error />
 					</Route>
