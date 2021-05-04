@@ -14,7 +14,7 @@ import {
   PageHero,
 } from '../components'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const SingleProductPage = () => {
   const { id } = useParams()
@@ -93,7 +93,7 @@ const SingleProductPage = () => {
                 <p>Dispatched in 5 - 7 weeks</p>
                 <IoIosArrowForward />
               </div>
-              <a href='#' className='link'>Why the longer lead time?</a>
+              <button href='#' className='link'>Why the longer lead time?</button>
             </div>
             <div>
               <div className='main-info'>
@@ -137,6 +137,10 @@ const Wrapper = styled.section`
 
     .links-info {
       margin: 4rem 0;
+      button {
+        background: transparent;
+        border: none;
+      }
       > div {
         border-bottom: 1px solid var(--light-grey-color, #5E6D77);
         padding: 2rem 0;
