@@ -85,6 +85,7 @@ const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 992px) {
+  .center-buttons{
     .btn--blue {
       background-color: var(--primary-blue, #2c98f0);
       transition: unset;
@@ -97,6 +98,7 @@ const Wrapper = styled.div`
         right: 15px;
       }
     }
+  }  
   }
 `
 export default CartButtons
