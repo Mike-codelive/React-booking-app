@@ -23,6 +23,8 @@ const CartPage = () => {
 }
 
 const Wrapper = styled.main`
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   .empty {
     text-align: center;
     h2 {

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const CartColumns = () => {
   return (
     <Wrapper>
-      <div className='content'>
+      <div className='content theme-text-dark'>
         <h5>item</h5>
         <h5>price</h5>
         <h5>quantity</h5>
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
       justify-items: center;
       column-gap: 1rem;
       h5 {
-        color: var(--clr-grey-5);
+        /* color: var(--clr-grey-5); */
         font-weight: 400;
       }
     }

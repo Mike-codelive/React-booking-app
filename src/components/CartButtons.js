@@ -8,7 +8,9 @@ import { useCartContext } from '../context/cart_context'
 import { useUserContext } from '../context/user_context'
 
 const CartButtons = () => {
-  const { closeSidebar, isSidebarOpen } = useProductsContext();
+  const { closeSidebar, isSidebarOpen } = useProductsContext()
+  const { total_items, clearCart } = useCartContext()
+  const { loginWithRedirect, myUser, logout } = useUserContext()
 
   return (
     <Wrapper>
@@ -17,12 +19,26 @@ const CartButtons = () => {
           <button type='button' className='btn btn--blue theme-text-dark'>
             {`${isSidebarOpen ? 'Cart' : ''}`}
             <BiShoppingBag />
-            <span className='cart-value'>12</span>
+            <span className='cart-value'>{total_items}</span>
           </button>
         </Link>
-        <button type='button' className='btn btn--blue theme-text-dark'>
-          {`${isSidebarOpen ? 'Login' : ''}`} <FaUserPlus />
-        </button>
+        {myUser ? (
+          <button
+            type='button'
+            className='btn btn--blue theme-text-dark'
+            onClick={() => {
+              clearCart()
+              localStorage.removeItem('user')
+              logout({ returnTo: window.location.origin })
+            }}
+          >
+            <FaUserMinus />
+          </button>
+        ) : (
+          <button type='button' className='btn btn--blue theme-text-dark' onClick={loginWithRedirect}>
+            <FaUserPlus />
+          </button>
+        )}
       </div>
     </Wrapper>
   )
@@ -70,24 +86,16 @@ const Wrapper = styled.div`
 
   @media screen and (max-width: 992px) {
     .btn--blue {
-      background-color: var(--primary-blue) !important;
-      transition: unset !important;
-      width: 9rem;
-      height: 5rem;
-      border-radius: 15px;
-      color: var(--static-white) !important;
-      .cart-value {
-        top: 10px;
-        right: 15px;
-      }
-    }
-    .btn--blue {
-      background-color: var(--primary-blue);
+      background-color: var(--primary-blue, #2c98f0);
       transition: unset;
       width: 9rem;
       height: 5rem;
       border-radius: 15px;
-      color: var(--static-white);
+      color: var(--static-white, #ffffff);
+      .cart-value {
+        top: 10px;
+        right: 15px;
+      }
     }
   }
 `

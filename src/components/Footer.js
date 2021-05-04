@@ -23,9 +23,9 @@ const Footer = () => {
           <div className='footer__items-single-contact'>
             <p>Follow Us</p>
             <div className='footer__items-single-icons'>
-              <a href='#'><AiOutlineTwitter /></a>
-              <a href='#'><AiOutlineYoutube /></a>
-              <a href='#'><FaFacebookF /></a>
+              <button href='#'><AiOutlineTwitter /></button>
+              <button href='#'><AiOutlineYoutube /></button>
+              <button href='#'><FaFacebookF /></button>
             </div>
           </div>
         </div>
@@ -34,12 +34,12 @@ const Footer = () => {
             <h6 className='small-text'>COMPANY</h6>
           </div>
           <div className='footer__items-single-links small-text --m-top'>
-            <ul>
-              <li><a href='#'>About Us</a></li>
-              <li><a href='#'>Community Blog</a></li>
-              <li><a href='#'>Rewards</a></li>
-              <li><a href='#'>Work Whit Us</a></li>
-              <li><a href='#'>Meet The Team</a></li>
+            <ul >
+              <li><button className='theme-text-dark' href='#'>About Us</button></li>
+              <li><button className='theme-text-dark' href='#'>Community Blog</button></li>
+              <li><button className='theme-text-dark' href='#'>Rewards</button></li>
+              <li><button className='theme-text-dark' href='#'>Work Whit Us</button></li>
+              <li><button className='theme-text-dark' href='#'>Meet The Team</button></li>
             </ul>
           </div>
         </div>
@@ -49,11 +49,11 @@ const Footer = () => {
           </div>
           <div className='footer__items-single-links small-text --m-top'>
             <ul>
-              <li><a href='#'>Account</a></li>
-              <li><a href='#'>Legal</a></li>
-              <li><a href='#'>Contact</a></li>
-              <li><a href='#'>Afiliate Program</a></li>
-              <li><a href='#'>Privacy Policy</a></li>
+              <li><button className='theme-text-dark' href='#'>Account</button></li>
+              <li><button className='theme-text-dark' href='#'>Legal</button></li>
+              <li><button className='theme-text-dark' href='#'>Contact</button></li>
+              <li><button className='theme-text-dark' href='#'>Afiliate Program</button></li>
+              <li><button className='theme-text-dark' href='#'>Privacy Policy</button></li>
             </ul>
           </div>
         </div>
@@ -132,14 +132,18 @@ const Wrapper = styled.footer`
         }
       }
       &-links {
-        font-weight: bold;
         li:not(:last-child) {
           margin-bottom: 25px;
         }
-        a {
+        button {
+          font-family: var(--font-primary);
+          font-size: 14px;
           position: relative;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
         }
-        a:after {
+        button:after {
           content: '';
           position: absolute;
           height: 2px;
@@ -150,7 +154,7 @@ const Wrapper = styled.footer`
           transition: transform 0.3s ease-in-out;
           transform: scaleX(0);
         }
-        a:hover:after {
+        button:hover:after {
           transform: scaleX(1);
         }
       }
@@ -162,8 +166,16 @@ const Wrapper = styled.footer`
         }
       }
       &-icons {
-        color: var(--grey-icons-color, #5E6D77);
-        a:not(:last-child) {
+        button {
+          background-color: transparent;
+          border: none;
+          svg {
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--grey-icons-color, #5E6D77);
+          }
+        }
+        button:not(:last-child) {
           margin-right: 1rem;
         }
       }
@@ -182,6 +194,7 @@ const Wrapper = styled.footer`
       color: var(--primary-blue, #2c98f0);
     }
   }
+}
 
   @media screen and (min-width: 400px) {
     .footer__items {

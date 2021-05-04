@@ -61,7 +61,7 @@ const AddToCart = ({ product }) => {
           to='/cart'
           onClick={() => addToCart(id, mainColor, amount, product)}
         >
-          <p className='btn theme-background-dark theme-text-light'>Add to basket</p>
+          <p className='btn theme-background-dark theme-text-light'>Add to Cart</p>
         </Link>
       </div>
     </Wrapper>

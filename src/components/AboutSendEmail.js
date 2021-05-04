@@ -9,7 +9,7 @@ const AboutSendEmail = () => {
     <Wrapper>
       <div className='about__email max-w-center'>
         <div className='about__email-description'>
-          <img className='about__email-description-svg' src={ico_email}></img>
+          <img className='about__email-description-svg' src={ico_email} alt='mail' />
           <div className='about__email-description-text'>
             <h3>Get Updates & 15% Off</h3>
             <h5>Thoughtful thoughts to your inbox</h5>

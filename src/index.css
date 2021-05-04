@@ -25,7 +25,7 @@ Variables
 
   
   
-  --theme-transition: 1.4s linear;
+  --theme-transition: .5s linear;
   --lateral-gutters: 0 2rem;
   --small-font: 14px;
 
@@ -165,6 +165,7 @@ ul {
   font-size: var(--small-font, 14px);
 }
 
+
 .cta-btn {
   position: relative;
   padding: 10px 20px;
@@ -214,8 +215,5 @@ ul {
 }
 .page {
   min-height: calc(100vh - (20vh + 10rem));
-}
-.section {
-  padding: 5rem 0;
 }
 

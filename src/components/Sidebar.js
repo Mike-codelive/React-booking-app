@@ -10,8 +10,9 @@ import { useThemeToggle } from '../context/theme_toggle'
 import { useUserContext } from '../context/user_context'
 
 const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar } = useProductsContext();
-  const { changeTheme, isLightThemeActive } = useThemeToggle();
+  const { isSidebarOpen, closeSidebar } = useProductsContext()
+  const { changeTheme, isLightThemeActive } = useThemeToggle()
+  const { myUser } = useUserContext()
 
   return (
     <SidebarContainer className='theme-background'>
@@ -34,11 +35,11 @@ const Sidebar = () => {
               </li>
             )
           })}
-          <li>
-            <Link to='/checkout' onClick={closeSidebar}>
-              checkout
-            </Link>
-          </li>
+          {myUser && (
+            <li>
+              <Link to='/checkout'>checkout</Link>
+            </li>
+          )}
         </ul>
         <CartButtons />
         <button className='theme-btn theme-text-dark' onClick={changeTheme}>

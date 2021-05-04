@@ -10,7 +10,7 @@ const EmptyCartPage = () => {
     <Wrapper>
       <PageHero title='cart' />
       <main className='page-400 theme-background'>
-        <img src={emptyCart}></img>
+        <img src={emptyCart} alt='empty cart' />
         <p className='theme-text-dark'>Sorry Your Cart Is Empty</p>
         <Link to='/products' className='cta-btn'>
           <span>Go to Shop</span>

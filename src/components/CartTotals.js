@@ -6,7 +6,41 @@ import { formatPrice } from '../utils/helpers'
 import { Link } from 'react-router-dom'
 
 const CartTotals = () => {
-  return <h4>cart totals</h4>
+  const { total_amount, shipping_fee } = useCartContext()
+  const { myUser, loginWithRedirect } = useUserContext()
+
+  return (
+    <Wrapper>
+      <div>
+        <article className='theme-text-dark'>
+          <h5>
+            subtotal : <span>{formatPrice(total_amount)}</span>
+          </h5>
+          <p>
+            shipping fee : <span>{formatPrice(shipping_fee)}</span>
+          </p>
+          <hr />
+          <h4>
+            order total :{' '}
+            <span>{formatPrice(total_amount + shipping_fee)}</span>
+          </h4>
+        </article>
+        {myUser ? (
+          <div className='btn-center'>
+            <Link to='/checkout' className='cta-btn'>
+              <span>proceed to checkout</span>
+            </Link>
+          </div>
+        ) : (
+          <div className='btn-center'>
+            <button type='button' className='cta-btn' onClick={loginWithRedirect}>
+              <span>login</span>
+            </button>
+          </div>
+        )}
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -17,6 +51,10 @@ const Wrapper = styled.section`
     border: 1px solid var(--clr-grey-8);
     border-radius: var(--radius);
     padding: 1.5rem 3rem;
+  }
+  .btn-center {
+    text-align: center;
+    margin-top: 2rem;
   }
   h4,
   h5,

@@ -12,6 +12,8 @@ import { useUserContext } from '../context/user_context'
 const Nav = () => {
   const { openSidebar } = useProductsContext();
   const { changeTheme, isLightThemeActive } = useThemeToggle();
+  const { myUser } = useUserContext()
+
 
   return (
     <NavContainer className='theme-background'>
@@ -31,6 +33,11 @@ const Nav = () => {
               </li>
             )
           })}
+          {myUser && (
+            <li className='theme-text-dark'>
+              <Link to='/checkout'>checkout</Link>
+            </li>
+          )}
         </ul>
         <div className='cart-btn-wrapper'>
           <button className='theme-btn theme-text-dark' onClick={changeTheme}>

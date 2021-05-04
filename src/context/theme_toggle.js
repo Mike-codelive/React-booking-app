@@ -1,10 +1,10 @@
-import React, { useContext, useReducer } from 'react'
+import React, { useContext, useReducer, useEffect } from 'react'
 import reducer from '../reducers/theme_reducer'
 import {
   CHANGE_THEME,
 } from '../actions'
 
-const getThemeStorage = () => {
+const getStorage = () => {
   let currentThemeState = JSON.parse(localStorage.getItem('theme'));
 
   if (currentThemeState === null) {
@@ -14,7 +14,7 @@ const getThemeStorage = () => {
 }
 
 const initialState = {
-  isLightThemeActive: getThemeStorage(),
+  isLightThemeActive: getStorage(),
 }
 
 const ThemeState = React.createContext()
@@ -25,6 +25,10 @@ export const ThemeToggler = ({ children }) => {
   const changeTheme = () => {
     dispatch({ type: CHANGE_THEME })
   }
+
+  useEffect(() => {
+    localStorage.setItem('theme', state.isLightThemeActive)
+  }, [state.isLightThemeActive])
 
   return (
     <ThemeState.Provider
