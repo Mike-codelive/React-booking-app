@@ -16,7 +16,8 @@ import {
 } from './pages'
 
 function App() {
-	const { isLightThemeActive } = useThemeToggle();
+	const { isLightThemeActive } = useThemeToggle()
+
 	return (
 		<AuthWrapper>
 			<Router>

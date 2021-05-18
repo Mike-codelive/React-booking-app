@@ -10,10 +10,9 @@ import { useThemeToggle } from '../context/theme_toggle'
 import { useUserContext } from '../context/user_context'
 
 const Nav = () => {
-  const { openSidebar } = useProductsContext();
-  const { changeTheme, isLightThemeActive } = useThemeToggle();
+  const { openSidebar } = useProductsContext()
+  const { changeTheme, isLightThemeActive } = useThemeToggle()
   const { myUser } = useUserContext()
-
 
   return (
     <NavContainer className='theme-background'>
@@ -48,7 +47,7 @@ const Nav = () => {
         </div>
       </div>
 
-    </NavContainer>
+    </NavContainer >
   )
 }
 
